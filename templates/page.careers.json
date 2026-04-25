@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "avm_careers": {
+      "type": "avm-careers",
+      "settings": {}
+    }
+  },
+  "order": ["avm_careers"]
+}

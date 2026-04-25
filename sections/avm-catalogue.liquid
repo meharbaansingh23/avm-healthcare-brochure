@@ -1,0 +1,272 @@
+<style>
+  .avm-cat * { box-sizing: border-box; }
+
+  /* ── Hero ─────────────────────────────────────────────── */
+  .avm-cat__hero {
+    background: #042C53;
+    padding: 60px 3rem;
+  }
+
+  .avm-cat__hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .avm-cat__hero-h1 {
+    font-size: clamp(2.8rem, 4vw, 3.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    margin: 0.8rem 0 1.2rem;
+  }
+
+  .avm-cat__hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 540px;
+  }
+
+  /* ── Form section ─────────────────────────────────────── */
+  .avm-cat__form-wrap {
+    background: #ffffff;
+    padding: 80px 3rem;
+  }
+
+  .avm-cat__form-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Success */
+  .avm-cat__success {
+    background: #E6F1FB;
+    border: 1px solid #378ADD;
+    border-radius: 6px;
+    padding: 1.5rem;
+    font-size: 14px;
+    color: #042C53;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  /* Grid rows */
+  .avm-cat__row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  .avm-cat__field {
+    margin-bottom: 1.4rem;
+  }
+
+  /* Labels */
+  .avm-cat__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5F7A99;
+    margin-bottom: 6px;
+  }
+
+  .avm-cat__label--required::after {
+    content: ' *';
+    color: #378ADD;
+  }
+
+  /* Inputs */
+  .avm-cat__input,
+  .avm-cat__select,
+  .avm-cat__textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #E8EEF5;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, sans-serif;
+    color: #042C53;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.18s ease;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .avm-cat__input:focus,
+  .avm-cat__select:focus,
+  .avm-cat__textarea:focus {
+    border-color: #378ADD;
+  }
+
+  .avm-cat__textarea {
+    resize: vertical;
+    line-height: 1.6;
+  }
+
+  .avm-cat__select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235F7A99' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  /* Submit */
+  .avm-cat__submit {
+    width: 100%;
+    padding: 14px;
+    background: #042C53;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, sans-serif;
+    cursor: pointer;
+    transition: background 0.18s ease;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+  }
+
+  .avm-cat__submit:hover { background: #0C447C; }
+
+  /* Errors */
+  .avm-cat__errors {
+    background: #fff0f0;
+    border: 1px solid #e8a0a0;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    font-size: 13px;
+    color: #8b2020;
+    margin-bottom: 1.6rem;
+  }
+
+  .avm-cat__errors ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+
+  @media screen and (max-width: 599px) {
+    .avm-cat__hero  { padding: 50px 1.6rem; }
+    .avm-cat__form-wrap { padding: 60px 1.6rem; }
+    .avm-cat__row-2 { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Hero -->
+<div class="avm-cat">
+  <section class="avm-cat__hero">
+    <div class="avm-cat__hero-inner">
+      <span class="avm-label">Request Catalogue</span>
+      <h1 class="avm-cat__hero-h1">Get our detailed product catalogue</h1>
+      <p class="avm-cat__hero-sub">Fill in your details below and our team will send you the full catalogue within one business day.</p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="avm-cat__form-wrap">
+    <div class="avm-cat__form-inner">
+
+      {%- form 'contact', id: 'CatalogueRequestForm' -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="avm-cat__success" role="alert">
+            Thank you. We have received your request and will send the catalogue to your email within one business day.
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="avm-cat__errors" role="alert">
+            <strong>Please fix the following:</strong>
+            <ul>
+              {%- for field in form.errors -%}
+                <li>{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[subject]" id="catalogue-subject" value="Catalogue Request">
+
+        <div class="avm-cat__row-2">
+          <div class="avm-cat__field">
+            <label class="avm-cat__label avm-cat__label--required" for="cat-name">Full Name</label>
+            <input class="avm-cat__input" type="text" id="cat-name" name="contact[name]" required autocomplete="name">
+          </div>
+          <div class="avm-cat__field">
+            <label class="avm-cat__label avm-cat__label--required" for="cat-email">Email Address</label>
+            <input class="avm-cat__input" type="email" id="cat-email" name="contact[email]" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="avm-cat__row-2">
+          <div class="avm-cat__field">
+            <label class="avm-cat__label avm-cat__label--required" for="cat-phone">Contact Number</label>
+            <input class="avm-cat__input" type="tel" id="cat-phone" name="contact[phone]" required autocomplete="tel">
+          </div>
+          <div class="avm-cat__field">
+            <label class="avm-cat__label avm-cat__label--required" for="cat-country">Country</label>
+            <input class="avm-cat__input" type="text" id="cat-country" name="contact[country]" required autocomplete="country-name">
+          </div>
+        </div>
+
+        <div class="avm-cat__field">
+          <label class="avm-cat__label avm-cat__label--required" for="cat-address">Address</label>
+          <textarea class="avm-cat__textarea" id="cat-address" name="contact[address]" rows="2" required></textarea>
+        </div>
+
+        <div class="avm-cat__field">
+          <label class="avm-cat__label avm-cat__label--required" for="cat-institution">Name of Institution / Hospital</label>
+          <input class="avm-cat__input" type="text" id="cat-institution" name="contact[institution]" required>
+        </div>
+
+        <div class="avm-cat__field">
+          <label class="avm-cat__label avm-cat__label--required" for="cat-type">Type of Institution</label>
+          <select class="avm-cat__select" id="cat-type" name="contact[institution_type]" required>
+            <option value="" disabled selected>Select type…</option>
+            <option value="Government Hospital">Government Hospital</option>
+            <option value="Private Hospital">Private Hospital</option>
+            <option value="Individual / Practitioner">Individual / Practitioner</option>
+            <option value="Clinic">Clinic</option>
+            <option value="Research Institution">Research Institution</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="avm-cat__field">
+          <label class="avm-cat__label" for="cat-requirements">Specific product interests or requirements (optional)</label>
+          <textarea class="avm-cat__textarea" id="cat-requirements" name="contact[body]" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="avm-cat__submit">Submit Catalogue Request</button>
+
+      {%- endform -%}
+
+    </div>
+  </section>
+</div>
+
+<script>
+  (function() {
+    var nameInput = document.getElementById('cat-name');
+    var subjectInput = document.getElementById('catalogue-subject');
+    if (nameInput && subjectInput) {
+      nameInput.addEventListener('input', function() {
+        subjectInput.value = 'Catalogue Request' + (this.value ? ' — ' + this.value : '');
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "AVM Catalogue Request",
+  "settings": [],
+  "presets": [{ "name": "AVM Catalogue Request" }]
+}
+{% endschema %}

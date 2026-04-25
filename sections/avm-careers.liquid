@@ -1,0 +1,324 @@
+<style>
+  .avm-careers * { box-sizing: border-box; }
+
+  /* ── Hero ─────────────────────────────────────────────── */
+  .avm-careers__hero {
+    background: #042C53;
+    padding: 60px 3rem;
+  }
+
+  .avm-careers__hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .avm-careers__hero-h1 {
+    font-size: clamp(2.8rem, 4vw, 3.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    margin: 0.8rem 0 1.2rem;
+  }
+
+  .avm-careers__hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 540px;
+  }
+
+  /* ── Intro ────────────────────────────────────────────── */
+  .avm-careers__intro {
+    background: #ffffff;
+    padding: 60px 3rem;
+  }
+
+  .avm-careers__intro-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .avm-careers__intro-text {
+    font-size: 18px;
+    color: #5F7A99;
+    line-height: 1.85;
+    margin: 0;
+  }
+
+  /* ── Form section ─────────────────────────────────────── */
+  .avm-careers__form-wrap {
+    background: #ffffff;
+    padding: 0 3rem 80px;
+  }
+
+  .avm-careers__form-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Success */
+  .avm-careers__success {
+    background: #E6F1FB;
+    border: 1px solid #378ADD;
+    border-radius: 6px;
+    padding: 1.5rem;
+    font-size: 14px;
+    color: #042C53;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  /* Two-col row */
+  .avm-careers__row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  .avm-careers__field {
+    margin-bottom: 1.4rem;
+  }
+
+  /* Labels */
+  .avm-careers__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5F7A99;
+    margin-bottom: 6px;
+  }
+
+  .avm-careers__label--required::after {
+    content: ' *';
+    color: #378ADD;
+  }
+
+  /* Inputs */
+  .avm-careers__input,
+  .avm-careers__select,
+  .avm-careers__textarea,
+  .avm-careers__file {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #E8EEF5;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, sans-serif;
+    color: #042C53;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.18s ease;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .avm-careers__input:focus,
+  .avm-careers__select:focus,
+  .avm-careers__textarea:focus {
+    border-color: #378ADD;
+  }
+
+  .avm-careers__textarea {
+    resize: vertical;
+    line-height: 1.6;
+  }
+
+  .avm-careers__select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235F7A99' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  .avm-careers__file {
+    padding: 10px 14px;
+    color: #5F7A99;
+    cursor: pointer;
+  }
+
+  .avm-careers__file-note {
+    font-size: 13px;
+    font-style: italic;
+    color: #5F7A99;
+    margin: 0.5rem 0 0;
+    line-height: 1.5;
+  }
+
+  /* Submit */
+  .avm-careers__submit {
+    width: 100%;
+    padding: 14px;
+    background: #042C53;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, sans-serif;
+    cursor: pointer;
+    transition: background 0.18s ease;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+  }
+
+  .avm-careers__submit:hover { background: #0C447C; }
+
+  /* Errors */
+  .avm-careers__errors {
+    background: #fff0f0;
+    border: 1px solid #e8a0a0;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    font-size: 13px;
+    color: #8b2020;
+    margin-bottom: 1.6rem;
+  }
+
+  .avm-careers__errors ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+
+  @media screen and (max-width: 599px) {
+    .avm-careers__hero       { padding: 50px 1.6rem; }
+    .avm-careers__intro      { padding: 50px 1.6rem; }
+    .avm-careers__form-wrap  { padding: 0 1.6rem 60px; }
+    .avm-careers__row-2      { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="avm-careers">
+
+  <!-- Hero -->
+  <section class="avm-careers__hero">
+    <div class="avm-careers__hero-inner">
+      <span class="avm-label">Careers</span>
+      <h1 class="avm-careers__hero-h1">Join the AVM Healthcare team</h1>
+      <p class="avm-careers__hero-sub">We are always looking for driven people who care about advancing surgical care. Send us your profile and we will be in touch.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="avm-careers__intro">
+    <div class="avm-careers__intro-inner">
+      <p class="avm-careers__intro-text">AVM Healthcare Products is a growing manufacturer and supplier of surgical instruments based in New Delhi. While we do not have specific openings listed at this time, we welcome expressions of interest from talented individuals across sales, operations, product management, and medical affairs.</p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="avm-careers__form-wrap">
+    <div class="avm-careers__form-inner">
+
+      {%- form 'contact', id: 'CareersForm' -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="avm-careers__success" role="alert">
+            Thank you for your interest in AVM Healthcare. We have received your details and will be in touch if a suitable opportunity arises.
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="avm-careers__errors" role="alert">
+            <strong>Please fix the following:</strong>
+            <ul>
+              {%- for field in form.errors -%}
+                <li>{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}</li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[subject]" id="careers-subject" value="Career Expression of Interest">
+
+        <div class="avm-careers__row-2">
+          <div class="avm-careers__field">
+            <label class="avm-careers__label avm-careers__label--required" for="careers-name">Full Name</label>
+            <input class="avm-careers__input" type="text" id="careers-name" name="contact[name]" required autocomplete="name">
+          </div>
+          <div class="avm-careers__field">
+            <label class="avm-careers__label avm-careers__label--required" for="careers-email">Email Address</label>
+            <input class="avm-careers__input" type="email" id="careers-email" name="contact[email]" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="avm-careers__row-2">
+          <div class="avm-careers__field">
+            <label class="avm-careers__label avm-careers__label--required" for="careers-phone">Phone Number</label>
+            <input class="avm-careers__input" type="tel" id="careers-phone" name="contact[phone]" required autocomplete="tel">
+          </div>
+          <div class="avm-careers__field">
+            <label class="avm-careers__label avm-careers__label--required" for="careers-location">Current Location / City</label>
+            <input class="avm-careers__input" type="text" id="careers-location" name="contact[location]" required>
+          </div>
+        </div>
+
+        <div class="avm-careers__field">
+          <label class="avm-careers__label avm-careers__label--required" for="careers-area">Area of Interest</label>
+          <select class="avm-careers__select" id="careers-area" name="contact[area_of_interest]" required>
+            <option value="" disabled selected>Select area…</option>
+            <option value="Sales &amp; Business Development">Sales &amp; Business Development</option>
+            <option value="Operations &amp; Logistics">Operations &amp; Logistics</option>
+            <option value="Product Management">Product Management</option>
+            <option value="Medical Affairs">Medical Affairs</option>
+            <option value="Finance &amp; Administration">Finance &amp; Administration</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="avm-careers__field">
+          <label class="avm-careers__label avm-careers__label--required" for="careers-intro">Brief Introduction</label>
+          <textarea
+            class="avm-careers__textarea"
+            id="careers-intro"
+            name="contact[body]"
+            rows="4"
+            required
+            placeholder="Tell us about your background, experience, and why you'd like to work with AVM Healthcare"
+          ></textarea>
+        </div>
+
+        <div class="avm-careers__field">
+          <label class="avm-careers__label" for="careers-cv">Attach your CV (PDF or Word, max 5MB)</label>
+          <input
+            class="avm-careers__file"
+            type="file"
+            id="careers-cv"
+            name="contact[cv]"
+            accept=".pdf,.doc,.docx"
+          >
+          <p class="avm-careers__file-note">Please also email your CV directly to <a href="mailto:info@avmhealthcare.com" style="color:#185FA5;">info@avmhealthcare.com</a> if the attachment does not submit successfully.</p>
+        </div>
+
+        <button type="submit" class="avm-careers__submit">Submit Expression of Interest</button>
+
+      {%- endform -%}
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function() {
+    var nameInput = document.getElementById('careers-name');
+    var subjectInput = document.getElementById('careers-subject');
+    if (nameInput && subjectInput) {
+      nameInput.addEventListener('input', function() {
+        subjectInput.value = 'Career Expression of Interest' + (this.value ? ' — ' + this.value : '');
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "AVM Careers",
+  "settings": [],
+  "presets": [{ "name": "AVM Careers" }]
+}
+{% endschema %}

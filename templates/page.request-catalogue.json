@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "avm_catalogue": {
+      "type": "avm-catalogue",
+      "settings": {}
+    }
+  },
+  "order": ["avm_catalogue"]
+}
