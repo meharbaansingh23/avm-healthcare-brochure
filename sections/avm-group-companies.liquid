@@ -1,79 +1,92 @@
 <style>
   .avm-group {
     background: #ffffff;
-    padding: 7rem 0;
+    padding: 80px 0;
   }
 
   .avm-group__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2.4rem;
+    text-align: center;
   }
 
   .avm-group__label {
     font-family: var(--font-body-family);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #B87D2A;
-    margin: 0 0 1.2rem;
+    margin: 0 0 1.4rem;
     display: block;
   }
 
   .avm-group__heading {
     font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-size: clamp(2.8rem, 3.8vw, 4.4rem);
     font-weight: 700;
     color: #0A1F44;
-    margin: 0 0 4rem;
+    margin: 0 0 1.2rem;
     letter-spacing: -0.02em;
     line-height: 1.15;
+  }
+
+  .avm-group__subtext {
+    font-family: var(--font-body-family);
+    font-size: 1.7rem;
+    line-height: 1.65;
+    color: #555;
+    margin: 0 auto 4.4rem;
+    max-width: 600px;
   }
 
   .avm-group__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    justify-items: center;
   }
 
   .avm-group__card {
     border: 1.5px solid #e0e4ec;
     border-radius: 10px;
-    padding: 2.8rem 2rem;
+    padding: 3.2rem 2rem 2.8rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: box-shadow 0.22s ease, border-color 0.22s ease;
   }
 
   .avm-group__card:hover {
-    box-shadow: 0 6px 28px rgba(10,31,68,0.10);
+    box-shadow: 0 6px 32px rgba(10, 31, 68, 0.09);
     border-color: #c8cfd9;
   }
 
   .avm-group__logo-placeholder {
-    width: 80px;
+    width: 100px;
     height: 80px;
-    background: #edf0f5;
-    border-radius: 10px;
-    margin-bottom: 1.6rem;
+    background: #EEEEEE;
+    border-radius: 8px;
+    margin-bottom: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
   .avm-group__logo-placeholder svg {
     width: 36px;
     height: 36px;
-    color: #c0c8d8;
+    color: #aab0be;
   }
 
   .avm-group__company-name {
-    font-family: var(--font-heading-family);
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: 500;
     color: #0A1F44;
     margin: 0;
     line-height: 1.3;
@@ -81,17 +94,18 @@
 
   @media screen and (max-width: 899px) {
     .avm-group__cards {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media screen and (max-width: 499px) {
     .avm-group__cards {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
     }
 
     .avm-group {
-      padding: 4rem 0;
+      padding: 60px 0;
     }
   }
 </style>
@@ -100,11 +114,13 @@
   <div class="avm-group__inner">
     <span class="avm-group__label">Our Group</span>
     <h2 class="avm-group__heading">Part of a larger family</h2>
+    <p class="avm-group__subtext">AVM Healthcare is part of a group of companies committed to advancing surgical and medical care in India.</p>
+
     <div class="avm-group__cards">
 
       <div class="avm-group__card">
-        <div class="avm-group__logo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="avm-group__logo-placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
@@ -112,8 +128,8 @@
       </div>
 
       <div class="avm-group__card">
-        <div class="avm-group__logo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="avm-group__logo-placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
           </svg>
         </div>
@@ -121,8 +137,8 @@
       </div>
 
       <div class="avm-group__card">
-        <div class="avm-group__logo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="avm-group__logo-placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
           </svg>
         </div>
@@ -130,8 +146,8 @@
       </div>
 
       <div class="avm-group__card">
-        <div class="avm-group__logo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="avm-group__logo-placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
           </svg>
         </div>

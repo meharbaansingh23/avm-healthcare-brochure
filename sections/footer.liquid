@@ -8,21 +8,49 @@
 {%- style -%}
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+    background-color: #0A1F44 !important;
+    color: #ffffff !important;
   }
 
-  /* AVM footer — navy background, gold accent links */
-  .footer.color-scheme-3 .footer-block__heading,
-  .footer.color-scheme-3 .footer-block__details-content a,
-  .footer.color-scheme-3 .list-menu__item--link,
-  .footer.color-scheme-3 .link--text,
-  .footer.color-scheme-3 .copyright__content a {
+  /* AVM footer — navy background, gold accent on links and dividers */
+  .footer .footer-block__heading,
+  .footer .footer__copyright a,
+  .footer .footer-block__details-content a,
+  .footer .list-menu__item--link,
+  .footer .link--text,
+  .footer .copyright__content a {
     color: #B87D2A !important;
   }
 
-  .footer.color-scheme-3 .footer-block__details-content a:hover,
-  .footer.color-scheme-3 .list-menu__item--link:hover,
-  .footer.color-scheme-3 .link--text:hover {
+  .footer .footer-block__details-content a:hover,
+  .footer .list-menu__item--link:hover,
+  .footer .link--text:hover,
+  .footer .footer__copyright a:hover {
     color: #d4942f !important;
+  }
+
+  .footer .footer__copyright,
+  .footer .copyright__content,
+  .footer .caption {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .footer .footer__content-bottom {
+    border-top: 1px solid rgba(184, 125, 42, 0.28) !important;
+  }
+
+  .footer .newsletter-form__button,
+  .footer .field__input {
+    border-color: rgba(184, 125, 42, 0.4) !important;
+  }
+
+  .footer .field__input {
+    background: rgba(255,255,255,0.06) !important;
+    color: #fff !important;
+  }
+
+  .footer .field__label {
+    color: rgba(255,255,255,0.55) !important;
   }
 
   .section-{{ section.id }}-padding {

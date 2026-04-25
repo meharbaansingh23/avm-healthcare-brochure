@@ -1,0 +1,142 @@
+/* AVM Healthcare — Global Brochure Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,opsz,wdth,wght@0,6..144,75..125,100..900;1,6..144,75..125,100..900&display=swap');
+
+:root {
+  --avm-navy: #0A1F44;
+  --avm-gold: #B87D2A;
+  --avm-white: #FFFFFF;
+  --avm-grey-light: #F7F7F5;
+  --avm-section-padding: 80px;
+  --avm-container: 1200px;
+}
+
+/* Font override — ensure Google Sans Flex across all elements */
+body,
+.avm-hero,
+.avm-video,
+.avm-values,
+.avm-cta,
+.avm-group {
+  font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Shared container */
+.avm-container {
+  max-width: var(--avm-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+/* Section label — gold, uppercase, small tracked */
+.avm-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--avm-gold);
+  margin-bottom: 1.4rem;
+}
+
+/* Section headings */
+.avm-heading-navy {
+  font-weight: 700;
+  color: var(--avm-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+}
+
+.avm-heading-white {
+  font-weight: 700;
+  color: var(--avm-white);
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+}
+
+/* Buttons */
+.avm-btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.avm-btn--gold {
+  background: var(--avm-gold);
+  color: var(--avm-white);
+  border: 2px solid var(--avm-gold);
+}
+
+.avm-btn--gold:hover {
+  background: #9e6b22;
+  border-color: #9e6b22;
+}
+
+.avm-btn--outline-white {
+  background: transparent;
+  color: var(--avm-white);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.avm-btn--outline-white:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--avm-white);
+}
+
+/* Gold accent rule */
+.avm-accent-rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--avm-gold);
+  margin-bottom: 1.6rem;
+}
+
+/* AVM footer overrides */
+.avm-footer {
+  background: var(--avm-navy) !important;
+  color: var(--avm-white);
+}
+
+.avm-footer a {
+  color: var(--avm-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.avm-footer a:hover {
+  color: #d4942f;
+}
+
+.avm-footer hr,
+.avm-footer .avm-footer__divider {
+  border-color: rgba(184, 125, 42, 0.3);
+}
+
+.avm-footer__bottom {
+  border-top: 1px solid rgba(184, 125, 42, 0.25);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Responsive utilities */
+@media screen and (max-width: 749px) {
+  :root {
+    --avm-section-padding: 60px;
+  }
+}
