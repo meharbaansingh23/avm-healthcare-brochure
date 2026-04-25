@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "avm_about": {
+      "type": "avm-about",
+      "settings": {}
+    }
+  },
+  "order": [
+    "avm_about"
+  ]
+}

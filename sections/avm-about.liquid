@@ -1,0 +1,576 @@
+<style>
+  /* ── Shared ────────────────────────────────────────────── */
+  .avm-about * {
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .avm-about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+  }
+
+  /* ── 1. Hero banner ─────────────────────────────────────── */
+  .avm-about__hero {
+    background: #0A1F44;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .avm-about__hero-eyebrow {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B87D2A;
+    margin: 0 0 1.6rem;
+  }
+
+  .avm-about__hero-h1 {
+    font-size: clamp(3.6rem, 5vw, 6rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.6rem;
+  }
+
+  .avm-about__hero-sub {
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── 2. Company Introduction ────────────────────────────── */
+  .avm-about__intro {
+    background: #ffffff;
+    padding: 80px 0;
+  }
+
+  .avm-about__intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .avm-about__accent-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #B87D2A;
+    margin-bottom: 1.6rem;
+  }
+
+  .avm-about__intro-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B87D2A;
+    margin-bottom: 1.4rem;
+  }
+
+  .avm-about__intro-h2 {
+    font-size: clamp(2.8rem, 3.5vw, 4rem);
+    font-weight: 700;
+    color: #0A1F44;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 2rem;
+  }
+
+  .avm-about__intro-body {
+    font-size: 1.7rem;
+    line-height: 1.75;
+    color: #444;
+    margin: 0;
+  }
+
+  .avm-about__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 4rem;
+    background: #F7F7F5;
+    border-radius: 12px;
+    border-left: 4px solid #B87D2A;
+  }
+
+  .avm-about__stat-value {
+    font-size: clamp(3.2rem, 4vw, 4.8rem);
+    font-weight: 700;
+    color: #0A1F44;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .avm-about__stat-label {
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 500;
+  }
+
+  /* ── 3. Mission & Motive ────────────────────────────────── */
+  .avm-about__mission {
+    background: #F7F7F5;
+    padding: 80px 0;
+  }
+
+  .avm-about__section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .avm-about__section-eyebrow {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B87D2A;
+    margin-bottom: 1.2rem;
+  }
+
+  .avm-about__section-h2 {
+    font-size: clamp(2.8rem, 3.5vw, 4rem);
+    font-weight: 700;
+    color: #0A1F44;
+    letter-spacing: -0.02em;
+    line-height: 1.14;
+    margin: 0;
+  }
+
+  .avm-about__section-h2--white {
+    color: #ffffff;
+  }
+
+  .avm-about__cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+  }
+
+  .avm-about__card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e8ecf2;
+    border-top: 3px solid #B87D2A;
+    padding: 3.2rem 2.8rem;
+    transition: box-shadow 0.22s ease;
+  }
+
+  .avm-about__card:hover {
+    box-shadow: 0 6px 32px rgba(10, 31, 68, 0.09);
+  }
+
+  .avm-about__card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0A1F44;
+    margin: 0 0 1.2rem;
+    line-height: 1.2;
+  }
+
+  .avm-about__card-body {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+  }
+
+  /* ── 4. Certifications ──────────────────────────────────── */
+  .avm-about__certs {
+    background: #ffffff;
+    padding: 80px 0;
+  }
+
+  .avm-about__cert-badges {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 5.6rem;
+  }
+
+  .avm-about__cert-badge {
+    border: 1.5px solid #e0e4ec;
+    border-top: 3px solid #B87D2A;
+    border-radius: 8px;
+    padding: 2.4rem 2rem;
+    text-align: center;
+    transition: box-shadow 0.22s ease;
+  }
+
+  .avm-about__cert-badge:hover {
+    box-shadow: 0 4px 20px rgba(10, 31, 68, 0.08);
+  }
+
+  .avm-about__cert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f0f4ff;
+    margin: 0 auto 1.2rem;
+  }
+
+  .avm-about__cert-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #0A1F44;
+  }
+
+  .avm-about__cert-name {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #0A1F44;
+    margin: 0;
+  }
+
+  .avm-about__details-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .avm-about__details-table tr {
+    border-bottom: 1px solid #edf0f6;
+  }
+
+  .avm-about__details-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .avm-about__details-table td {
+    padding: 1.4rem 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .avm-about__details-table td:first-child {
+    font-weight: 600;
+    color: #0A1F44;
+    width: 200px;
+    padding-right: 2.4rem;
+    white-space: nowrap;
+  }
+
+  .avm-about__details-table td:last-child {
+    color: #555;
+  }
+
+  /* ── 5. Clients ─────────────────────────────────────────── */
+  .avm-about__clients {
+    background: #0A1F44;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .avm-about__clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 3.6rem;
+  }
+
+  .avm-about__client-pill {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .avm-about__client-pill:hover {
+    border-color: #B87D2A;
+    background: rgba(184, 125, 42, 0.1);
+  }
+
+  /* ── 6. CTA ─────────────────────────────────────────────── */
+  .avm-about__cta {
+    background: #B87D2A;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .avm-about__cta-h2 {
+    font-size: clamp(2.8rem, 4vw, 4.4rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    line-height: 1.14;
+    margin: 0 0 3rem;
+  }
+
+  .avm-about__cta-btn {
+    display: inline-block;
+    padding: 1.3rem 3.4rem;
+    background: #0A1F44;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid #0A1F44;
+    transition: background 0.22s ease, border-color 0.22s ease;
+  }
+
+  .avm-about__cta-btn:hover {
+    background: #0d2a5c;
+    border-color: #0d2a5c;
+  }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media screen and (max-width: 899px) {
+    .avm-about__intro-grid {
+      grid-template-columns: 1fr;
+      gap: 3.2rem;
+    }
+
+    .avm-about__cards-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .avm-about__cert-badges {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .avm-about__stats {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .avm-about__hero,
+    .avm-about__intro,
+    .avm-about__mission,
+    .avm-about__certs,
+    .avm-about__clients,
+    .avm-about__cta {
+      padding: 60px 0;
+    }
+
+    .avm-about__cert-badges {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .avm-about__details-table td:first-child {
+      width: auto;
+      white-space: normal;
+    }
+  }
+</style>
+
+<!-- ── 1. Hero Banner ──────────────────────────────────────── -->
+<div class="avm-about">
+
+  <section class="avm-about__hero">
+    <div class="avm-about__container">
+      <span class="avm-about__hero-eyebrow">About Us</span>
+      <h1 class="avm-about__hero-h1">An Innovative Company</h1>
+      <p class="avm-about__hero-sub">Indigenous surgical products developed in German collaboration — Made in India.</p>
+    </div>
+  </section>
+
+  <!-- ── 2. Company Introduction ────────────────────────────── -->
+  <section class="avm-about__intro">
+    <div class="avm-about__container">
+      <div class="avm-about__intro-grid">
+
+        <div>
+          <span class="avm-about__accent-line" aria-hidden="true"></span>
+          <span class="avm-about__intro-label">Who We Are</span>
+          <h2 class="avm-about__intro-h2">AVM Healthcare Products</h2>
+          <p class="avm-about__intro-body">AVM Healthcare Products Pvt. Ltd. is a New Delhi–based manufacturer and supplier of surgical instruments and medical devices. The company is engaged in the design, development, innovation, production, sales, and consultancy of all kinds of surgical instruments and equipment — spanning neurosurgery, micro surgery, cranio surgery, plastic surgery, implants, spinal surgery, cardiovascular surgery, gynaecology, ENT, orthopaedics, and more. We supply to premier institutions across India and export to overseas markets.</p>
+        </div>
+
+        <div>
+          <div class="avm-about__stats">
+            <div class="avm-about__stat">
+              <span class="avm-about__stat-value">3,400+</span>
+              <span class="avm-about__stat-label">Products in our catalogue</span>
+            </div>
+            <div class="avm-about__stat">
+              <span class="avm-about__stat-value">6</span>
+              <span class="avm-about__stat-label">Surgical specialties covered</span>
+            </div>
+            <div class="avm-about__stat">
+              <span class="avm-about__stat-value">Worldwide</span>
+              <span class="avm-about__stat-label">Exports to international markets</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Mission & Motive ────────────────────────────────── -->
+  <section class="avm-about__mission">
+    <div class="avm-about__container">
+      <div class="avm-about__section-header">
+        <span class="avm-about__section-eyebrow">Our Purpose</span>
+        <h2 class="avm-about__section-h2">Mission, Motive &amp; Collaboration</h2>
+      </div>
+      <div class="avm-about__cards-3">
+
+        <div class="avm-about__card">
+          <h3 class="avm-about__card-title">Our Mission</h3>
+          <p class="avm-about__card-body">To provide world-class instruments for the benefit of mankind. Our motto is to continuously evolve our product range to meet the dynamic requirements of surgical users.</p>
+        </div>
+
+        <div class="avm-about__card">
+          <h3 class="avm-about__card-title">Our Motive</h3>
+          <p class="avm-about__card-body">Surgeon priority with hundred percent satisfactory installations worldwide. Offering complete solutions — from idea conceptualisation and product design to product launch, including validation with Govt. and Non-Govt. bodies under OEM arrangements.</p>
+        </div>
+
+        <div class="avm-about__card">
+          <h3 class="avm-about__card-title">German Collaboration</h3>
+          <p class="avm-about__card-body">AVM produces indigenous products made in collaboration with German engineering standards, and ANI products made in Germany — combining the best of Indian manufacturing with European precision.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Certifications & Compliance ───────────────────── -->
+  <section class="avm-about__certs">
+    <div class="avm-about__container">
+      <div class="avm-about__section-header">
+        <span class="avm-about__section-eyebrow">Certifications &amp; Compliance</span>
+        <h2 class="avm-about__section-h2">Built to the highest standards</h2>
+      </div>
+
+      <div class="avm-about__cert-badges">
+
+        <div class="avm-about__cert-badge">
+          <div class="avm-about__cert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <p class="avm-about__cert-name">CE Certified</p>
+        </div>
+
+        <div class="avm-about__cert-badge">
+          <div class="avm-about__cert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <p class="avm-about__cert-name">ISO Certified</p>
+        </div>
+
+        <div class="avm-about__cert-badge">
+          <div class="avm-about__cert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <p class="avm-about__cert-name">FDA Compliant</p>
+        </div>
+
+        <div class="avm-about__cert-badge">
+          <div class="avm-about__cert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <p class="avm-about__cert-name">NSIC Registered</p>
+        </div>
+
+      </div>
+
+      <table class="avm-about__details-table">
+        <tbody>
+          <tr>
+            <td>Registered Office</td>
+            <td>17-19 A Block Chhatarpur Extension, Rajpur Road, New Delhi</td>
+          </tr>
+          <tr>
+            <td>Manufacturing Unit</td>
+            <td>HR-11A, Street No. 10, New Rohtak Road Industrial Area, New Delhi</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><a href="mailto:info@avmhealthcare.com" style="color:#B87D2A; text-decoration:none;">info@avmhealthcare.com</a></td>
+          </tr>
+          <tr>
+            <td>GST</td>
+            <td>07AABCA1500D1ZM</td>
+          </tr>
+          <tr>
+            <td>IEC</td>
+            <td>0597024685</td>
+          </tr>
+          <tr>
+            <td>Trade Mark No.</td>
+            <td>4621659</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <!-- ── 5. Trusted Institutions ───────────────────────────── -->
+  <section class="avm-about__clients">
+    <div class="avm-about__container">
+      <span class="avm-about__section-eyebrow">Our Clients</span>
+      <h2 class="avm-about__section-h2 avm-about__section-h2--white">Trusted by India's leading hospitals</h2>
+      <div class="avm-about__clients-grid">
+        <span class="avm-about__client-pill">AIIMS Delhi</span>
+        <span class="avm-about__client-pill">Medanta Hospital</span>
+        <span class="avm-about__client-pill">Fortis Hospital</span>
+        <span class="avm-about__client-pill">Apollo Hospitals</span>
+        <span class="avm-about__client-pill">KEM Hospital Mumbai</span>
+        <span class="avm-about__client-pill">PGI Chandigarh</span>
+        <span class="avm-about__client-pill">GB Pant Hospital</span>
+        <span class="avm-about__client-pill">Lilavati Hospital</span>
+        <span class="avm-about__client-pill">Sir Ganga Ram Hospital</span>
+        <span class="avm-about__client-pill">AIIMS Rishikesh</span>
+        <span class="avm-about__client-pill">KIMS Hyderabad</span>
+        <span class="avm-about__client-pill">Madras Medical College</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. CTA ─────────────────────────────────────────────── -->
+  <section class="avm-about__cta">
+    <div class="avm-about__container">
+      <h2 class="avm-about__cta-h2">Get our detailed product catalogue</h2>
+      <a href="/pages/request-catalogue" class="avm-about__cta-btn">Request Full Catalogue</a>
+    </div>
+  </section>
+
+</div>
+
+{% schema %}
+{
+  "name": "AVM About Us",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AVM About Us"
+    }
+  ]
+}
+{% endschema %}
