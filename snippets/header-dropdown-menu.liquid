@@ -1,103 +1,64 @@
 {% comment %}
-  Renders a standard dropdown style menu for the header.
-
-  Usage:
-  {% render 'header-dropdown-menu' %}
+  AVM Healthcare — hardcoded desktop nav (Home, About Us, Contact, Careers, Request Catalogue)
 {% endcomment %}
+
+<style>
+  .avm-nav__catalogue-btn {
+    display: inline-block;
+    padding: 0.65rem 1.6rem;
+    background: #B87D2A;
+    color: #ffffff !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 3px;
+    text-decoration: none !important;
+    border: 2px solid #B87D2A;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .avm-nav__catalogue-btn:hover {
+    background: #9e6b22 !important;
+    border-color: #9e6b22;
+    color: #ffffff !important;
+  }
+</style>
 
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
-      <li>
-        {%- if link.links != blank -%}
-          <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}">
-              <summary
-                id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset"
-              >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
-                >
-                  {{- link.title | escape -}}
-                </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <ul
-                id="HeaderMenu-MenuList-{{ forloop.index }}"
-                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
-                role="list"
-                tabindex="-1"
-              >
-                {%- for childlink in link.links -%}
-                  <li>
-                    {%- if childlink.links == blank -%}
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                    {%- else -%}
-                      <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
-                        <summary
-                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                          class="header__menu-item link link--text list-menu__item focus-inset caption-large"
-                        >
-                          <span>{{ childlink.title | escape }}</span>
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </summary>
-                        <ul
-                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                          class="header__submenu list-menu motion-reduce"
-                        >
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      </details>
-                    {%- endif -%}
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </details>
-          </header-menu>
-        {%- else -%}
-          <a
-            id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            <span
-              {%- if link.current %}
-                class="header__active-menu-item"
-              {% endif %}
-            >
-              {{- link.title | escape -}}
-            </span>
-          </a>
-        {%- endif -%}
-      </li>
-    {%- endfor -%}
+
+    <li>
+      <a href="{{ routes.root_url }}" class="header__menu-item list-menu__item link link--text focus-inset"
+        {% if request.page_type == 'index' %}aria-current="page"{% endif %}>
+        <span {% if request.page_type == 'index' %}class="header__active-menu-item"{% endif %}>Home</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="/pages/about" class="header__menu-item list-menu__item link link--text focus-inset"
+        {% if request.path contains '/pages/about' %}aria-current="page"{% endif %}>
+        <span {% if request.path contains '/pages/about' %}class="header__active-menu-item"{% endif %}>About Us</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="/pages/contact" class="header__menu-item list-menu__item link link--text focus-inset"
+        {% if request.path contains '/pages/contact' %}aria-current="page"{% endif %}>
+        <span {% if request.path contains '/pages/contact' %}class="header__active-menu-item"{% endif %}>Contact</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="/pages/careers" class="header__menu-item list-menu__item link link--text focus-inset"
+        {% if request.path contains '/pages/careers' %}aria-current="page"{% endif %}>
+        <span {% if request.path contains '/pages/careers' %}class="header__active-menu-item"{% endif %}>Careers</span>
+      </a>
+    </li>
+
+    <li style="margin-left: 0.8rem;">
+      <a href="/pages/request-catalogue" class="avm-nav__catalogue-btn">Request Catalogue</a>
+    </li>
+
   </ul>
 </nav>
