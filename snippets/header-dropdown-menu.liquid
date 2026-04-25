@@ -1,40 +1,21 @@
-{% comment %}AVM Healthcare — custom desktop nav{% endcomment %}
+{% comment %}AVM Healthcare — editorial nav{% endcomment %}
+<nav class="header__inline-menu avm-nav" style="width:100%;">
 
-<nav class="header__inline-menu avm-nav-wrap" style="width:100%; max-width:none; box-sizing:border-box;">
-
-  <a href="{{ routes.root_url }}" class="avm-nav__logo-link" style="text-decoration:none; flex-shrink:0;">
+  <a href="{{ routes.root_url }}" class="avm-nav__logo">
     <span class="avm-nav__logo-name">AVM Healthcare</span>
     <span class="avm-nav__logo-sub">Products Pvt. Ltd.</span>
   </a>
 
   <ul class="avm-nav__links">
-    <li>
-      <a href="{{ routes.root_url }}"
-         class="avm-nav__link{% if request.page_type == 'index' %} avm-nav__link--active{% endif %}">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/pages/about-us"
-         class="avm-nav__link{% if request.path contains '/pages/about-us' %} avm-nav__link--active{% endif %}">
-        About Us
-      </a>
-    </li>
-    <li>
-      <a href="/pages/contact"
-         class="avm-nav__link{% if request.path contains '/pages/contact' %} avm-nav__link--active{% endif %}">
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="/pages/careers"
-         class="avm-nav__link{% if request.path contains '/pages/careers' %} avm-nav__link--active{% endif %}">
-        Careers
-      </a>
-    </li>
-    <li>
-      <a href="/pages/request-catalogue" class="avm-nav__cta">Request Catalogue</a>
-    </li>
+    <li><a href="{{ routes.root_url }}"
+      class="avm-nav__link{% if request.page_type == 'index' %} avm-nav__link--active{% endif %}">Home</a></li>
+    <li><a href="/pages/about-us"
+      class="avm-nav__link{% if request.path contains '/pages/about-us' %} avm-nav__link--active{% endif %}">About Us</a></li>
+    <li><a href="/pages/contact"
+      class="avm-nav__link{% if request.path contains '/pages/contact' %} avm-nav__link--active{% endif %}">Contact</a></li>
+    <li><a href="/pages/careers"
+      class="avm-nav__link{% if request.path contains '/pages/careers' %} avm-nav__link--active{% endif %}">Careers</a></li>
+    <li><a href="/pages/request-catalogue" class="avm-nav__cta">Request Catalogue</a></li>
   </ul>
 
 </nav>

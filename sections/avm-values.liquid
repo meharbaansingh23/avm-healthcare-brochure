@@ -1,128 +1,199 @@
 <style>
   .avm-values {
     background: #ffffff;
-    padding: 80px 0;
+    padding: var(--section-pad, 120px) 0;
   }
 
   .avm-values__inner {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 3rem;
   }
 
-  .avm-values__header {
-    margin-bottom: 3.2rem;
+  .avm-values__top {
+    margin-bottom: 4rem;
   }
 
-  .avm-values__heading {
-    font-size: clamp(2.4rem, 3vw, 3.6rem);
-    font-weight: 700;
-    color: #042C53;
-    letter-spacing: -0.02em;
-    line-height: 1.14;
-    margin: 0.8rem 0 0;
-    max-width: 560px;
+  .avm-values__label {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2563EB;
+    margin-bottom: 1rem;
   }
 
-  /* Grid with 1px gap acting as dividers */
-  .avm-values__grid {
+  .avm-values__h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 400;
+    color: #0A1628;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  /* Asymmetric layout */
+  .avm-values__layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: #E8EEF5;
-    border: 1px solid #E8EEF5;
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: 40fr 60fr;
+    gap: 5rem;
+    align-items: start;
   }
 
-  .avm-values__card {
-    background: #ffffff;
-    padding: 2rem 1.5rem;
-    transition: background 0.18s ease;
+  /* Left editorial column */
+  .avm-values__editorial {}
+
+  .avm-values__pulltext {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0 0 2.5rem;
   }
 
-  .avm-values__card:hover {
-    background: #F4F8FD;
+  .avm-values__img-placeholder {
+    border-radius: 12px;
+    background: #F1F5F9;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E2E8F0;
+  }
+
+  .avm-values__img-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #CBD5E1;
+  }
+
+  /* Right: value rows */
+  .avm-values__rows {}
+
+  .avm-values__row {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #E2E8F0;
+    transition: background 0.15s ease;
+  }
+
+  .avm-values__row:first-child {
+    border-top: 1px solid #E2E8F0;
   }
 
   .avm-values__num {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: #85B7EB;
-    margin-bottom: 0.6rem;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 13px;
+    color: #CBD5E1;
+    width: 40px;
+    flex-shrink: 0;
+    padding-top: 1px;
   }
 
   .avm-values__title {
+    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: #042C53;
-    margin: 0 0 0.6rem;
-    line-height: 1.3;
+    color: #0A1628;
+    width: 220px;
+    flex-shrink: 0;
+    padding-right: 2rem;
+    line-height: 1.5;
   }
 
-  .avm-values__body {
+  .avm-values__desc {
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
-    line-height: 1.75;
-    color: #5F7A99;
-    margin: 0;
+    color: #64748B;
+    line-height: 1.7;
+    flex: 1;
   }
 
-  @media screen and (max-width: 899px) {
-    .avm-values__grid { grid-template-columns: repeat(2, 1fr); }
-    .avm-values { padding: 60px 0; }
+  @media screen and (max-width: 1024px) {
+    .avm-values__layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .avm-values__img-placeholder { height: 200px; }
   }
 
-  @media screen and (max-width: 499px) {
-    .avm-values__grid { grid-template-columns: 1fr; }
+  @media screen and (max-width: 767px) {
+    .avm-values { padding: 64px 0; }
+    .avm-values__inner { padding: 0 1.5rem; }
+    .avm-values__row { flex-wrap: wrap; gap: 0.4rem; }
+    .avm-values__title { width: auto; padding-right: 0; }
+    .avm-values__num { width: 32px; }
   }
 </style>
 
 <section class="avm-values">
   <div class="avm-values__inner">
-    <div class="avm-values__header">
-      <span class="avm-label">Why choose AVM</span>
-      <h2 class="avm-values__heading">Built for the demands of modern surgery</h2>
+
+    <div class="avm-values__top">
+      <span class="avm-values__label">Why choose AVM</span>
+      <h2 class="avm-values__h2">Built for the demands of modern surgery</h2>
     </div>
-    <div class="avm-values__grid">
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">01</span>
-        <h3 class="avm-values__title">Premium Grade Materials</h3>
-        <p class="avm-values__body">Instruments crafted from hardened, non-rusting steel meeting the toughest requirements for elasticity, tenacity and corrosion resistance.</p>
+    <div class="avm-values__layout">
+
+      <!-- Left: editorial -->
+      <div class="avm-values__editorial">
+        <p class="avm-values__pulltext">"Every instrument we supply is chosen with one question in mind — will it perform when it matters most?"</p>
+        <div class="avm-values__img-placeholder">
+          <span class="avm-values__img-label">[ Product image ]</span>
+        </div>
       </div>
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">02</span>
-        <h3 class="avm-values__title">Surgeon-Driven Innovation</h3>
-        <p class="avm-values__body">New products developed directly from surgeons' concepts and ideas, ensuring instruments meet real operating theatre needs.</p>
-      </div>
+      <!-- Right: clean rows -->
+      <div class="avm-values__rows">
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">03</span>
-        <h3 class="avm-values__title">Customisation on Request</h3>
-        <p class="avm-values__body">Products tailored to the specific requirements of individual users and institutions, delivered with precision.</p>
-      </div>
+        <div class="avm-values__row">
+          <span class="avm-values__num">01</span>
+          <span class="avm-values__title">Premium grade materials</span>
+          <span class="avm-values__desc">Hardened, non-rusting steel meeting the toughest requirements for elasticity, tenacity and corrosion resistance.</span>
+        </div>
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">04</span>
-        <h3 class="avm-values__title">Global Quality Standards</h3>
-        <p class="avm-values__body">Certified CE, ISO and FDA compliant. Quality monitored at every stage of manufacturing.</p>
-      </div>
+        <div class="avm-values__row">
+          <span class="avm-values__num">02</span>
+          <span class="avm-values__title">Surgeon-driven innovation</span>
+          <span class="avm-values__desc">New products developed directly from surgeons' concepts and ideas, ensuring real operating theatre fit.</span>
+        </div>
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">05</span>
-        <h3 class="avm-values__title">24&times;7 Service Support</h3>
-        <p class="avm-values__body">Round-the-clock service facility ensuring your instruments are always in optimal condition.</p>
-      </div>
+        <div class="avm-values__row">
+          <span class="avm-values__num">03</span>
+          <span class="avm-values__title">Customisation on request</span>
+          <span class="avm-values__desc">Products tailored to the specific requirements of individual users and institutions.</span>
+        </div>
 
-      <div class="avm-values__card">
-        <span class="avm-values__num">06</span>
-        <h3 class="avm-values__title">Continuously Evolving Range</h3>
-        <p class="avm-values__body">Product catalogue constantly updated to meet the dynamic and changing requirements of surgical users worldwide.</p>
-      </div>
+        <div class="avm-values__row">
+          <span class="avm-values__num">04</span>
+          <span class="avm-values__title">Global quality standards</span>
+          <span class="avm-values__desc">Certified CE, ISO and FDA compliant. Quality monitored at every stage of manufacturing.</span>
+        </div>
 
+        <div class="avm-values__row">
+          <span class="avm-values__num">05</span>
+          <span class="avm-values__title">24&times;7 service support</span>
+          <span class="avm-values__desc">Round-the-clock facility ensuring your instruments remain in optimal condition at all times.</span>
+        </div>
+
+        <div class="avm-values__row">
+          <span class="avm-values__num">06</span>
+          <span class="avm-values__title">Continuously evolving range</span>
+          <span class="avm-values__desc">Catalogue updated constantly to meet the dynamic requirements of surgical users worldwide.</span>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
