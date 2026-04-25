@@ -1,64 +1,40 @@
-{% comment %}
-  AVM Healthcare — hardcoded desktop nav (Home, About Us, Contact, Careers, Request Catalogue)
-{% endcomment %}
+{% comment %}AVM Healthcare — custom desktop nav{% endcomment %}
 
-<style>
-  .avm-nav__catalogue-btn {
-    display: inline-block;
-    padding: 0.65rem 1.6rem;
-    background: #B87D2A;
-    color: #ffffff !important;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    border-radius: 3px;
-    text-decoration: none !important;
-    border: 2px solid #B87D2A;
-    transition: background 0.2s ease, border-color 0.2s ease;
-    white-space: nowrap;
-  }
+<nav class="header__inline-menu avm-nav-wrap" style="width:100%; max-width:none; box-sizing:border-box;">
 
-  .avm-nav__catalogue-btn:hover {
-    background: #9e6b22 !important;
-    border-color: #9e6b22;
-    color: #ffffff !important;
-  }
-</style>
+  <a href="{{ routes.root_url }}" class="avm-nav__logo-link" style="text-decoration:none; flex-shrink:0;">
+    <span class="avm-nav__logo-name">AVM Healthcare</span>
+    <span class="avm-nav__logo-sub">Products Pvt. Ltd.</span>
+  </a>
 
-<nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
-
+  <ul class="avm-nav__links">
     <li>
-      <a href="{{ routes.root_url }}" class="header__menu-item list-menu__item link link--text focus-inset"
-        {% if request.page_type == 'index' %}aria-current="page"{% endif %}>
-        <span {% if request.page_type == 'index' %}class="header__active-menu-item"{% endif %}>Home</span>
+      <a href="{{ routes.root_url }}"
+         class="avm-nav__link{% if request.page_type == 'index' %} avm-nav__link--active{% endif %}">
+        Home
       </a>
     </li>
-
     <li>
-      <a href="/pages/about-us" class="header__menu-item list-menu__item link link--text focus-inset"
-        {% if request.path contains '/pages/about-us' %}aria-current="page"{% endif %}>
-        <span {% if request.path contains '/pages/about-us' %}class="header__active-menu-item"{% endif %}>About Us</span>
+      <a href="/pages/about-us"
+         class="avm-nav__link{% if request.path contains '/pages/about-us' %} avm-nav__link--active{% endif %}">
+        About Us
       </a>
     </li>
-
     <li>
-      <a href="/pages/contact" class="header__menu-item list-menu__item link link--text focus-inset"
-        {% if request.path contains '/pages/contact' %}aria-current="page"{% endif %}>
-        <span {% if request.path contains '/pages/contact' %}class="header__active-menu-item"{% endif %}>Contact</span>
+      <a href="/pages/contact"
+         class="avm-nav__link{% if request.path contains '/pages/contact' %} avm-nav__link--active{% endif %}">
+        Contact
       </a>
     </li>
-
     <li>
-      <a href="/pages/careers" class="header__menu-item list-menu__item link link--text focus-inset"
-        {% if request.path contains '/pages/careers' %}aria-current="page"{% endif %}>
-        <span {% if request.path contains '/pages/careers' %}class="header__active-menu-item"{% endif %}>Careers</span>
+      <a href="/pages/careers"
+         class="avm-nav__link{% if request.path contains '/pages/careers' %} avm-nav__link--active{% endif %}">
+        Careers
       </a>
     </li>
-
-    <li style="margin-left: 0.8rem;">
-      <a href="/pages/request-catalogue" class="avm-nav__catalogue-btn">Request Catalogue</a>
+    <li>
+      <a href="/pages/request-catalogue" class="avm-nav__cta">Request Catalogue</a>
     </li>
-
   </ul>
+
 </nav>

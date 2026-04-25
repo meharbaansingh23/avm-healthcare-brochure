@@ -1,140 +1,239 @@
-/* AVM Healthcare — Global Brochure Styles */
+/* AVM Healthcare — Global Design System */
 
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,opsz,wdth,wght@0,6..144,75..125,100..900;1,6..144,75..125,100..900&display=swap');
 
+/* ── Tokens ─────────────────────────────────────────────── */
 :root {
-  --avm-navy: #0A1F44;
-  --avm-gold: #B87D2A;
-  --avm-white: #FFFFFF;
-  --avm-grey-light: #F7F7F5;
+  --avm-navy:        #042C53;
+  --avm-blue-dark:   #0C447C;
+  --avm-blue-mid:    #185FA5;
+  --avm-blue-bright: #378ADD;
+  --avm-blue-light:  #85B7EB;
+  --avm-blue-pale:   #E6F1FB;
+  --avm-blue-xpale:  #F4F8FD;
+  --avm-text-dark:   #042C53;
+  --avm-text-mid:    #5F7A99;
+  --avm-border:      #E8EEF5;
+  --avm-white:       #FFFFFF;
+
+  /* Legacy aliases kept for any remaining refs */
   --avm-section-padding: 80px;
   --avm-container: 1200px;
 }
 
-/* Font override — ensure Google Sans Flex across all elements */
+/* ── Base font ──────────────────────────────────────────── */
 body,
-.avm-hero,
-.avm-video,
-.avm-values,
-.avm-cta,
-.avm-group {
+body * {
   font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Shared container */
+/* ── Shared utilities ────────────────────────────────────── */
 .avm-container {
-  max-width: var(--avm-container);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
-/* Section label — gold, uppercase, small tracked */
 .avm-label {
   display: block;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--avm-gold);
-  margin-bottom: 1.4rem;
-}
-
-/* Section headings */
-.avm-heading-navy {
-  font-weight: 700;
-  color: var(--avm-navy);
-  letter-spacing: -0.02em;
-  line-height: 1.14;
-}
-
-.avm-heading-white {
-  font-weight: 700;
-  color: var(--avm-white);
-  letter-spacing: -0.025em;
-  line-height: 1.14;
-}
-
-/* Buttons */
-.avm-btn {
-  display: inline-block;
-  padding: 1.2rem 2.8rem;
-  font-size: 1.5rem;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  border-radius: 3px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--avm-blue-bright);
+  margin-bottom: 0.8rem;
 }
 
-.avm-btn--gold {
-  background: var(--avm-gold);
-  color: var(--avm-white);
-  border: 2px solid var(--avm-gold);
+.avm-label--light {
+  color: var(--avm-blue-light);
 }
 
-.avm-btn--gold:hover {
-  background: #9e6b22;
-  border-color: #9e6b22;
-}
-
-.avm-btn--outline-white {
-  background: transparent;
-  color: var(--avm-white);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.avm-btn--outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--avm-white);
-}
-
-/* Gold accent rule */
-.avm-accent-rule {
+.avm-accent-bar {
   display: block;
   width: 40px;
-  height: 2px;
-  background: var(--avm-gold);
-  margin-bottom: 1.6rem;
+  height: 3px;
+  background: var(--avm-blue-bright);
+  margin-bottom: 1.2rem;
+  border-radius: 2px;
 }
 
-/* AVM footer overrides */
-.avm-footer {
-  background: var(--avm-navy) !important;
-  color: var(--avm-white);
+/* ── Navbar ──────────────────────────────────────────────── */
+.avm-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 3rem;
+  background: #fff;
+  border-bottom: 1px solid var(--avm-border);
 }
 
-.avm-footer a {
-  color: var(--avm-gold);
+.avm-nav__logo-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--avm-navy);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.avm-nav__logo-sub {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--avm-blue-bright);
+  margin-top: 1px;
+}
+
+.avm-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.avm-nav__link {
+  font-size: 13px;
+  color: var(--avm-text-mid);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
 }
 
-.avm-footer a:hover {
-  color: #d4942f;
+.avm-nav__link:hover,
+.avm-nav__link--active {
+  color: var(--avm-navy);
 }
 
-.avm-footer hr,
-.avm-footer .avm-footer__divider {
-  border-color: rgba(184, 125, 42, 0.3);
+.avm-nav__cta {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--avm-navy);
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: background 0.18s ease;
+  white-space: nowrap;
 }
 
-.avm-footer__bottom {
-  border-top: 1px solid rgba(184, 125, 42, 0.25);
-  padding-top: 2rem;
-  margin-top: 2rem;
+.avm-nav__cta:hover {
+  background: var(--avm-blue-dark) !important;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.avm-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  border: 1px solid transparent;
+}
+
+.avm-btn--white {
+  background: #fff;
+  color: var(--avm-navy);
+  border-color: #fff;
+}
+
+.avm-btn--white:hover {
+  background: var(--avm-blue-pale);
+}
+
+.avm-btn--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.avm-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.avm-btn--bright {
+  background: var(--avm-blue-bright);
+  color: #fff;
+  border-color: var(--avm-blue-bright);
+}
+
+.avm-btn--bright:hover {
+  background: var(--avm-blue-mid);
+  border-color: var(--avm-blue-mid);
+}
+
+.avm-btn--navy {
+  background: var(--avm-navy);
+  color: #fff;
+  border-color: var(--avm-navy);
+}
+
+.avm-btn--navy:hover {
+  background: var(--avm-blue-dark);
+  border-color: var(--avm-blue-dark);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.avm-footer-bar {
+  background: #021E3A;
+  padding: 2rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.2rem;
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.65);
+  gap: 1rem;
 }
 
-/* Responsive utilities */
+.avm-footer-bar__copy {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.avm-footer-bar__links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.avm-footer-bar__link {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.avm-footer-bar__link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media screen and (max-width: 899px) {
+  .avm-container {
+    padding: 0 1.6rem;
+  }
+
+  .avm-nav-wrap {
+    padding: 0 1.6rem;
+  }
+
+  .avm-footer-bar {
+    padding: 1.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media screen and (max-width: 749px) {
   :root {
     --avm-section-padding: 60px;

@@ -7,118 +7,120 @@
   .avm-values__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.4rem;
+    padding: 0 3rem;
   }
 
-  .avm-values__label {
-    font-family: var(--font-body-family);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #B87D2A;
-    margin: 0 0 1.4rem;
-    display: block;
+  .avm-values__header {
+    margin-bottom: 3.2rem;
   }
 
   .avm-values__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 3.8vw, 4.4rem);
+    font-size: clamp(2.4rem, 3vw, 3.6rem);
     font-weight: 700;
-    color: #0A1F44;
-    margin: 0 0 4.4rem;
+    color: #042C53;
     letter-spacing: -0.02em;
     line-height: 1.14;
-    max-width: 640px;
+    margin: 0.8rem 0 0;
+    max-width: 560px;
   }
 
+  /* Grid with 1px gap acting as dividers */
   .avm-values__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.4rem;
+    gap: 1px;
+    background: #E8EEF5;
+    border: 1px solid #E8EEF5;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .avm-values__card {
     background: #ffffff;
-    border: 1px solid #e8ecf2;
-    border-left: 3px solid #B87D2A;
-    border-radius: 0 8px 8px 0;
-    padding: 2.8rem 2.4rem;
-    transition: box-shadow 0.22s ease;
+    padding: 2rem 1.5rem;
+    transition: background 0.18s ease;
   }
 
   .avm-values__card:hover {
-    box-shadow: 0 6px 32px rgba(10, 31, 68, 0.09);
+    background: #F4F8FD;
   }
 
-  .avm-values__card-title {
-    font-family: var(--font-heading-family);
-    font-size: 1.9rem;
+  .avm-values__num {
+    display: block;
+    font-size: 11px;
     font-weight: 700;
-    color: #0A1F44;
-    margin: 0 0 0.9rem;
-    line-height: 1.2;
+    letter-spacing: 0.12em;
+    color: #85B7EB;
+    margin-bottom: 0.6rem;
   }
 
-  .avm-values__card-body {
-    font-family: var(--font-body-family);
-    font-size: 1.55rem;
-    line-height: 1.65;
-    color: #555;
+  .avm-values__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #042C53;
+    margin: 0 0 0.6rem;
+    line-height: 1.3;
+  }
+
+  .avm-values__body {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #5F7A99;
     margin: 0;
   }
 
   @media screen and (max-width: 899px) {
-    .avm-values__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .avm-values__grid { grid-template-columns: repeat(2, 1fr); }
+    .avm-values { padding: 60px 0; }
   }
 
-  @media screen and (max-width: 599px) {
-    .avm-values__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .avm-values {
-      padding: 60px 0;
-    }
+  @media screen and (max-width: 499px) {
+    .avm-values__grid { grid-template-columns: 1fr; }
   }
 </style>
 
 <section class="avm-values">
   <div class="avm-values__inner">
-    <span class="avm-values__label">Why Choose AVM</span>
-    <h2 class="avm-values__heading">Built for the demands of modern surgery</h2>
+    <div class="avm-values__header">
+      <span class="avm-label">Why choose AVM</span>
+      <h2 class="avm-values__heading">Built for the demands of modern surgery</h2>
+    </div>
     <div class="avm-values__grid">
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">Premium Grade Materials</h3>
-        <p class="avm-values__card-body">Instruments crafted from hardened, non-rusting steel meeting the toughest requirements for elasticity, tenacity and corrosion resistance.</p>
+        <span class="avm-values__num">01</span>
+        <h3 class="avm-values__title">Premium Grade Materials</h3>
+        <p class="avm-values__body">Instruments crafted from hardened, non-rusting steel meeting the toughest requirements for elasticity, tenacity and corrosion resistance.</p>
       </div>
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">Surgeon-Driven Innovation</h3>
-        <p class="avm-values__card-body">New products developed directly from surgeons' concepts and ideas, ensuring instruments meet real operating theatre needs.</p>
+        <span class="avm-values__num">02</span>
+        <h3 class="avm-values__title">Surgeon-Driven Innovation</h3>
+        <p class="avm-values__body">New products developed directly from surgeons' concepts and ideas, ensuring instruments meet real operating theatre needs.</p>
       </div>
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">Customisation on Request</h3>
-        <p class="avm-values__card-body">Products tailored to the specific requirements of individual users and institutions.</p>
+        <span class="avm-values__num">03</span>
+        <h3 class="avm-values__title">Customisation on Request</h3>
+        <p class="avm-values__body">Products tailored to the specific requirements of individual users and institutions, delivered with precision.</p>
       </div>
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">Global Quality Standards</h3>
-        <p class="avm-values__card-body">Certified CE, ISO and FDA compliant. Quality monitored at every stage of manufacturing.</p>
+        <span class="avm-values__num">04</span>
+        <h3 class="avm-values__title">Global Quality Standards</h3>
+        <p class="avm-values__body">Certified CE, ISO and FDA compliant. Quality monitored at every stage of manufacturing.</p>
       </div>
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">24&times;7 Service Support</h3>
-        <p class="avm-values__card-body">Round-the-clock service facility ensuring your instruments are always in optimal condition.</p>
+        <span class="avm-values__num">05</span>
+        <h3 class="avm-values__title">24&times;7 Service Support</h3>
+        <p class="avm-values__body">Round-the-clock service facility ensuring your instruments are always in optimal condition.</p>
       </div>
 
       <div class="avm-values__card">
-        <h3 class="avm-values__card-title">Continuously Evolving Range</h3>
-        <p class="avm-values__card-body">Product catalogue constantly updated to meet the dynamic and changing requirements of surgical users worldwide.</p>
+        <span class="avm-values__num">06</span>
+        <h3 class="avm-values__title">Continuously Evolving Range</h3>
+        <p class="avm-values__body">Product catalogue constantly updated to meet the dynamic and changing requirements of surgical users worldwide.</p>
       </div>
 
     </div>
@@ -129,10 +131,6 @@
 {
   "name": "AVM Values",
   "settings": [],
-  "presets": [
-    {
-      "name": "AVM Values"
-    }
-  ]
+  "presets": [{ "name": "AVM Values" }]
 }
 {% endschema %}

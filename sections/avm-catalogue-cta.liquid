@@ -1,98 +1,61 @@
 <style>
-  .avm-cta {
-    background: #0A1F44;
-    padding: 80px 0;
-    text-align: center;
+  .avm-cta-wrap {
+    background: #F4F8FD;
+    padding: 80px 3rem;
   }
 
-  .avm-cta__inner {
-    max-width: 760px;
+  .avm-cta-block {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.4rem;
+    background: #0C447C;
+    border-radius: 8px;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+    flex-wrap: wrap;
   }
 
-  .avm-cta__rule {
-    display: block;
-    width: 50px;
-    height: 1px;
-    background: #B87D2A;
-    margin: 0 auto 2.8rem;
-  }
+  .avm-cta-block__left {}
 
-  .avm-cta__label {
-    font-family: var(--font-body-family);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #B87D2A;
-    margin: 0 0 1.6rem;
-    display: block;
-  }
-
-  .avm-cta__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  .avm-cta-block__heading {
+    font-size: 22px;
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 1.8rem;
-    line-height: 1.14;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
   }
 
-  .avm-cta__body {
-    font-family: var(--font-body-family);
-    font-size: 1.75rem;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0 0 3.4rem;
-  }
-
-  .avm-cta__btn {
-    display: inline-block;
-    padding: 1.3rem 3.4rem;
-    background: #B87D2A;
-    color: #ffffff;
-    font-family: var(--font-body-family);
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    border-radius: 3px;
-    border: 2px solid #B87D2A;
-    transition: background 0.22s ease, border-color 0.22s ease;
-  }
-
-  .avm-cta__btn:hover {
-    background: #9e6b22;
-    border-color: #9e6b22;
+  .avm-cta-block__sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 560px;
   }
 
   @media screen and (max-width: 749px) {
-    .avm-cta {
-      padding: 60px 0;
-    }
+    .avm-cta-wrap { padding: 60px 1.6rem; }
+    .avm-cta-block { padding: 2.4rem 1.8rem; }
   }
 </style>
 
-<section class="avm-cta">
-  <div class="avm-cta__inner">
-    <span class="avm-cta__rule" aria-hidden="true"></span>
-    <span class="avm-cta__label">Get the Complete Picture</span>
-    <h2 class="avm-cta__heading">Request our detailed product catalogue</h2>
-    <p class="avm-cta__body">Over 3,400 surgical instruments across 6 specialties — from neurosurgery to cardiovascular. Our team will send the full catalogue to you within one business day.</p>
-    <a href="/pages/request-catalogue" class="avm-cta__btn">Request Full Catalogue</a>
+<div class="avm-cta-wrap">
+  <div class="avm-cta-block">
+    <div class="avm-cta-block__left">
+      <h3 class="avm-cta-block__heading">Get our detailed product catalogue</h3>
+      <p class="avm-cta-block__sub">3,400+ instruments across 6 specialties — delivered to your inbox within one business day.</p>
+    </div>
+    <a href="/pages/request-catalogue" class="avm-btn avm-btn--bright" style="flex-shrink:0;">Request Full Catalogue</a>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "AVM Catalogue CTA",
   "settings": [],
-  "presets": [
-    {
-      "name": "AVM Catalogue CTA"
-    }
-  ]
+  "presets": [{ "name": "AVM Catalogue CTA" }]
 }
 {% endschema %}

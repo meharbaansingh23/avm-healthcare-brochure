@@ -1,133 +1,149 @@
 <style>
+  /* ── Hero ───────────────────────────────────────────────── */
   .avm-hero {
     position: relative;
     width: 100%;
     min-height: 90vh;
     overflow: hidden;
-    font-family: var(--font-heading-family);
+    background: #042C53;
   }
 
-  .avm-hero__slide {
+  .avm-slide {
     position: absolute;
     inset: 0;
     opacity: 0;
     transition: opacity 1.1s ease-in-out;
     background-size: cover;
     background-position: center;
+    background-color: #042C53;
   }
 
-  .avm-hero__slide.is-active {
-    opacity: 1;
-  }
+  .avm-slide.is-active { opacity: 1; }
 
-  .avm-hero__slide::after {
+  .avm-slide::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(4, 44, 83, 0.75);
   }
 
+  /* Decorative vertical lines */
+  .avm-hero__deco {
+    position: absolute;
+    top: 0;
+    right: 6rem;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .avm-hero__deco-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(55, 138, 221, 0.12);
+  }
+
+  .avm-hero__deco-line:first-child  { right: 0; }
+  .avm-hero__deco-line:last-child   { right: 3.2rem; }
+
+  /* Content */
   .avm-hero__content {
     position: relative;
     z-index: 10;
     min-height: 90vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem;
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .avm-hero__eyebrow {
-    font-family: var(--font-body-family);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #B87D2A;
-    margin: 0 0 2rem;
     display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #378ADD;
+    margin-bottom: 1.4rem;
   }
 
-  .avm-hero__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(3.2rem, 5.5vw, 6rem);
+  .avm-hero__h1 {
+    font-size: clamp(3rem, 4.5vw, 4.8rem);
     font-weight: 700;
     color: #ffffff;
+    letter-spacing: -0.02em;
     line-height: 1.12;
-    max-width: 900px;
-    margin: 0 0 2rem;
-    letter-spacing: -0.025em;
+    max-width: 600px;
+    margin: 0 0 1.6rem;
   }
 
-  .avm-hero__subtext {
-    font-family: var(--font-body-family);
-    font-size: clamp(1.6rem, 2.2vw, 2rem);
-    color: rgba(255, 255, 255, 0.86);
-    max-width: 620px;
-    margin: 0 0 3.2rem;
+  .avm-hero__h1 .avm-hero__accent {
+    color: #85B7EB;
+  }
+
+  .avm-hero__sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 0 2.4rem;
     font-weight: 400;
-    line-height: 1.6;
   }
 
   .avm-hero__buttons {
     display: flex;
-    gap: 1.4rem;
+    gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
-  .avm-hero__btn {
-    display: inline-block;
-    padding: 1.2rem 2.8rem;
-    font-family: var(--font-body-family);
-    font-size: 1.5rem;
+  /* Stats row */
+  .avm-hero__stats {
+    display: flex;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+  }
+
+  .avm-hero__stat-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .avm-hero__stat-label {
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.05em;
-    border-radius: 3px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
   }
 
-  .avm-hero__btn--filled {
-    background: #B87D2A;
-    color: #ffffff;
-    border: 2px solid #B87D2A;
-  }
-
-  .avm-hero__btn--filled:hover {
-    background: #9e6b22;
-    border-color: #9e6b22;
-  }
-
-  .avm-hero__btn--outline {
-    background: transparent;
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-  }
-
-  .avm-hero__btn--outline:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #ffffff;
-  }
-
+  /* Dot indicators */
   .avm-hero__dots {
     position: absolute;
-    bottom: 2.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 2.4rem;
+    left: 3rem;
     z-index: 20;
     display: flex;
-    gap: 0.9rem;
+    gap: 0.6rem;
   }
 
   .avm-hero__dot {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.3);
     border: none;
     padding: 0;
     cursor: pointer;
@@ -135,43 +151,97 @@
   }
 
   .avm-hero__dot.is-active {
-    background: #B87D2A;
-    transform: scale(1.3);
+    background: #378ADD;
+    transform: scale(1.4);
+  }
+
+  /* ── Client ticker ──────────────────────────────────────── */
+  .avm-ticker {
+    background: #0C447C;
+    padding: 12px 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+
+  .avm-ticker__label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #85B7EB;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .avm-ticker__list {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+  }
+
+  .avm-ticker__sep {
+    color: rgba(255, 255, 255, 0.25);
+    margin: 0 0.5rem;
   }
 
   @media screen and (max-width: 749px) {
-    .avm-hero__content {
-      min-height: 80vh;
-      padding: 5rem 2rem;
-    }
-
     .avm-hero {
       min-height: 80vh;
     }
+
+    .avm-hero__content {
+      min-height: 80vh;
+      padding: 5rem 1.6rem;
+    }
+
+    .avm-hero__deco { display: none; }
+
+    .avm-hero__stats { gap: 2rem; }
+
+    .avm-hero__dots { left: 1.6rem; }
+
+    .avm-ticker { padding: 12px 1.6rem; }
   }
 </style>
 
 <section class="avm-hero" id="avm-hero-{{ section.id }}">
-  <div
-    class="avm-hero__slide is-active"
-    style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80'); background-size: cover; background-position: center;"
-  ></div>
-  <div
-    class="avm-hero__slide"
-    style="background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1600&q=80'); background-size: cover; background-position: center;"
-  ></div>
-  <div
-    class="avm-hero__slide"
-    style="background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&q=80'); background-size: cover; background-position: center;"
-  ></div>
+
+  <div class="avm-slide is-active" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80'); background-size:cover; background-position:center; background-color:#042C53;"></div>
+  <div class="avm-slide" style="background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1600&q=80'); background-size:cover; background-position:center; background-color:#042C53;"></div>
+  <div class="avm-slide" style="background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&q=80'); background-size:cover; background-position:center; background-color:#042C53;"></div>
+
+  <div class="avm-hero__deco" aria-hidden="true">
+    <span class="avm-hero__deco-line"></span>
+    <span class="avm-hero__deco-line"></span>
+  </div>
 
   <div class="avm-hero__content">
     <span class="avm-hero__eyebrow">An Innovative Company &middot; Made in India</span>
-    <h1 class="avm-hero__heading">Precision Surgical Instruments for Modern Healthcare</h1>
-    <p class="avm-hero__subtext">Indigenous surgical products developed in German collaboration — supplied to premier institutions across India and worldwide.</p>
+    <h1 class="avm-hero__h1">Precision instruments for <span class="avm-hero__accent">modern surgical care</span></h1>
+    <p class="avm-hero__sub">Indigenous surgical products developed in German collaboration — supplied to premier institutions across India and worldwide.</p>
     <div class="avm-hero__buttons">
-      <a href="/pages/request-catalogue" class="avm-hero__btn avm-hero__btn--filled">Request Full Catalogue</a>
-      <a href="/pages/contact" class="avm-hero__btn avm-hero__btn--outline">Get in Touch</a>
+      <a href="/pages/request-catalogue" class="avm-btn avm-btn--white">Request Full Catalogue</a>
+      <a href="/pages/contact" class="avm-btn avm-btn--ghost">Get in Touch</a>
+    </div>
+    <div class="avm-hero__stats">
+      <div class="avm-hero__stat">
+        <span class="avm-hero__stat-num">3,400+</span>
+        <span class="avm-hero__stat-label">Products</span>
+      </div>
+      <div class="avm-hero__stat">
+        <span class="avm-hero__stat-num">6</span>
+        <span class="avm-hero__stat-label">Specialties</span>
+      </div>
+      <div class="avm-hero__stat">
+        <span class="avm-hero__stat-num">30+</span>
+        <span class="avm-hero__stat-label">Years Active</span>
+      </div>
+      <div class="avm-hero__stat">
+        <span class="avm-hero__stat-num">36+</span>
+        <span class="avm-hero__stat-label">Client Hospitals</span>
+      </div>
     </div>
   </div>
 
@@ -180,42 +250,45 @@
     <button class="avm-hero__dot" data-index="1" role="tab" aria-label="Slide 2" aria-selected="false"></button>
     <button class="avm-hero__dot" data-index="2" role="tab" aria-label="Slide 3" aria-selected="false"></button>
   </div>
+
 </section>
+
+<div class="avm-ticker">
+  <span class="avm-ticker__label">Trusted by</span>
+  <span class="avm-ticker__list">
+    AIIMS Delhi<span class="avm-ticker__sep">&middot;</span>Medanta Hospital<span class="avm-ticker__sep">&middot;</span>Fortis Hospital<span class="avm-ticker__sep">&middot;</span>Apollo Hospitals<span class="avm-ticker__sep">&middot;</span>KEM Hospital Mumbai<span class="avm-ticker__sep">&middot;</span>PGI Chandigarh<span class="avm-ticker__sep">&middot;</span>GB Pant Hospital<span class="avm-ticker__sep">&middot;</span>Lilavati Hospital
+  </span>
+</div>
 
 <script>
 (function() {
   var hero = document.getElementById('avm-hero-{{ section.id }}');
   if (!hero) return;
+  var slides = hero.querySelectorAll('.avm-slide');
+  var dots   = hero.querySelectorAll('.avm-hero__dot');
+  var current = 0, total = slides.length, timer;
 
-  var slides = hero.querySelectorAll('.avm-hero__slide');
-  var dots = hero.querySelectorAll('.avm-hero__dot');
-  var current = 0;
-  var total = slides.length;
-  var timer;
-
-  function goTo(index) {
+  function goTo(i) {
     slides[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
     dots[current].setAttribute('aria-selected', 'false');
-    current = (index + total) % total;
+    current = (i + total) % total;
     slides[current].classList.add('is-active');
     dots[current].classList.add('is-active');
     dots[current].setAttribute('aria-selected', 'true');
   }
 
-  function next() { goTo(current + 1); }
+  function start() { timer = setInterval(function(){ goTo(current + 1); }, 5000); }
+  function reset() { clearInterval(timer); start(); }
 
-  function startTimer() { timer = setInterval(next, 5000); }
-  function resetTimer() { clearInterval(timer); startTimer(); }
-
-  dots.forEach(function(dot) {
-    dot.addEventListener('click', function() {
+  dots.forEach(function(d) {
+    d.addEventListener('click', function() {
       goTo(parseInt(this.getAttribute('data-index'), 10));
-      resetTimer();
+      reset();
     });
   });
 
-  startTimer();
+  start();
 })();
 </script>
 
@@ -223,10 +296,6 @@
 {
   "name": "AVM Hero Slideshow",
   "settings": [],
-  "presets": [
-    {
-      "name": "AVM Hero Slideshow"
-    }
-  ]
+  "presets": [{ "name": "AVM Hero Slideshow" }]
 }
 {% endschema %}

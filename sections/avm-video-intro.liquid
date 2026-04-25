@@ -1,62 +1,41 @@
 <style>
   .avm-video {
-    background: #F7F7F5;
+    background: #F4F8FD;
     padding: 80px 0;
   }
 
   .avm-video__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.4rem;
+    padding: 0 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 5rem;
     align-items: center;
   }
 
-  .avm-video__label {
-    font-family: var(--font-body-family);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #B87D2A;
-    margin: 0 0 1.4rem;
-    display: block;
-  }
-
-  .avm-video__accent-line {
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: #B87D2A;
-    margin-bottom: 1.6rem;
-  }
-
   .avm-video__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 3.8vw, 4.4rem);
+    font-size: clamp(2.4rem, 3vw, 3.6rem);
     font-weight: 700;
-    color: #0A1F44;
-    margin: 0 0 2rem;
-    line-height: 1.15;
+    color: #042C53;
     letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0.8rem 0 1.6rem;
   }
 
   .avm-video__body {
-    font-family: var(--font-body-family);
-    font-size: 1.7rem;
-    line-height: 1.75;
-    color: #444;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #5F7A99;
     margin: 0;
   }
 
   .avm-video__embed-wrap {
     position: relative;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 12px 48px rgba(10, 31, 68, 0.16);
-    background: #000;
+    box-shadow: 0 8px 40px rgba(4, 44, 83, 0.12);
+    background: #042C53;
     aspect-ratio: 16 / 9;
     width: 100%;
   }
@@ -73,24 +52,22 @@
   @media screen and (max-width: 899px) {
     .avm-video__inner {
       grid-template-columns: 1fr;
-      gap: 3.2rem;
+      gap: 3rem;
     }
 
-    .avm-video {
-      padding: 60px 0;
-    }
+    .avm-video { padding: 60px 0; }
   }
 </style>
 
 <section class="avm-video">
   <div class="avm-video__inner">
-    <div class="avm-video__text">
-      <span class="avm-video__label">Who We Are</span>
-      <span class="avm-video__accent-line" aria-hidden="true"></span>
-      <h2 class="avm-video__heading">Supplying Surgical Excellence Since 1996</h2>
+    <div>
+      <span class="avm-accent-bar"></span>
+      <span class="avm-label">Who we are</span>
+      <h2 class="avm-video__heading">Supplying surgical excellence since 1996</h2>
       <p class="avm-video__body">AVM Healthcare Products Pvt. Ltd. is a New Delhi–based manufacturer and supplier of advanced quality surgical instruments and medical devices. We design, develop, and supply instruments across neurosurgery, general surgery, cardiovascular, gynaecology, plastic surgery, and more — serving premier institutions including AIIMS, Medanta, Fortis, Apollo, and KEM Hospital.</p>
     </div>
-    <div class="avm-video__media">
+    <div>
       <div class="avm-video__embed-wrap">
         <iframe
           src="https://www.youtube.com/embed/_QNRNKJiNuA"
@@ -108,10 +85,6 @@
 {
   "name": "AVM Video Intro",
   "settings": [],
-  "presets": [
-    {
-      "name": "AVM Video Intro"
-    }
-  ]
+  "presets": [{ "name": "AVM Video Intro" }]
 }
 {% endschema %}
