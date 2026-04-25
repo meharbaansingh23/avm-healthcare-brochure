@@ -1,3 +1,52 @@
+<style>
+  .avm-footer {
+    background: #0A1628;
+    padding: 0;
+  }
+
+  .avm-footer__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-sizing: border-box;
+  }
+
+  .avm-footer__copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.01em;
+  }
+
+  .avm-footer__links {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .avm-footer__link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    cursor: pointer;
+  }
+
+  .avm-footer__link:hover { color: rgba(255, 255, 255, 0.75); }
+
+  @media screen and (max-width: 767px) {
+    .avm-footer__inner { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
 <footer class="avm-footer">
   <div class="avm-footer__inner">
     <span class="avm-footer__copy">&copy; {{ 'now' | date: '%Y' }} AVM Healthcare Products Pvt. Ltd.</span>

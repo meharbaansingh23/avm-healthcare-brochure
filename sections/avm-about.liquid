@@ -1,35 +1,52 @@
 <style>
   .avm-about * { box-sizing: border-box; }
 
-  /* ── Shared inner ───────────────────────────────────────── */
-  .avm-about__inner {
-    max-width: 1200px;
+  .avm-about__wrap {
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 3rem;
   }
 
   /* ── 1. Hero ─────────────────────────────────────────────── */
   .avm-about__hero {
-    background: #042C53;
-    padding: 80px 3rem;
+    background: #0A1628;
+    padding: 100px 3rem;
   }
 
-  .avm-about__hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+  .avm-about__hero-inner { max-width: 1280px; margin: 0 auto; }
+
+  .avm-about__hero-deco {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #2563EB;
+    margin-bottom: 1.6rem;
+  }
+
+  .avm-about__hero-label {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2563EB;
+    margin-bottom: 1.2rem;
   }
 
   .avm-about__hero-h1 {
-    font-size: clamp(3rem, 4vw, 3.6rem);
-    font-weight: 700;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(36px, 4.5vw, 48px);
+    font-weight: 400;
     color: #ffffff;
-    letter-spacing: -0.02em;
-    line-height: 1.12;
-    margin: 0.8rem 0 1.2rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 1.2rem;
     max-width: 640px;
   }
 
   .avm-about__hero-sub {
+    font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.7;
@@ -40,7 +57,7 @@
   /* ── 2. Intro ────────────────────────────────────────────── */
   .avm-about__intro {
     background: #ffffff;
-    padding: 80px 0;
+    padding: 100px 0;
   }
 
   .avm-about__intro-grid {
@@ -50,74 +67,93 @@
     align-items: start;
   }
 
+  .avm-about__intro-label {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2563EB;
+    margin-bottom: 1rem;
+  }
+
   .avm-about__intro-h2 {
-    font-size: clamp(2.2rem, 2.8vw, 3.2rem);
-    font-weight: 700;
-    color: #042C53;
-    letter-spacing: -0.02em;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(26px, 2.8vw, 36px);
+    font-weight: 400;
+    color: #0A1628;
+    letter-spacing: -0.03em;
     line-height: 1.15;
-    margin: 0.8rem 0 1.6rem;
+    margin: 0 0 1.6rem;
   }
 
   .avm-about__intro-body {
-    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
     line-height: 1.85;
-    color: #5F7A99;
-    margin: 0 0 1.2rem;
+    color: #64748B;
+    margin: 0 0 1rem;
   }
 
   .avm-about__intro-body:last-child { margin-bottom: 0; }
 
   /* Stat block */
-  .avm-about__stats {
-    border: 1px solid #E8EEF5;
-    border-radius: 8px;
-    overflow: hidden;
-  }
+  .avm-about__stats { border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden; }
 
   .avm-about__stat-row {
     display: flex;
-    align-items: center;
-    gap: 1.6rem;
+    align-items: baseline;
+    gap: 1.4rem;
     padding: 1.4rem 1.8rem;
-    border-bottom: 1px solid #E8EEF5;
+    border-bottom: 1px solid #E2E8F0;
   }
 
   .avm-about__stat-row:last-child { border-bottom: none; }
 
   .avm-about__stat-num {
+    font-family: 'DM Serif Display', Georgia, serif;
     font-size: 32px;
-    font-weight: 700;
-    color: #042C53;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    color: #0A1628;
+    letter-spacing: -0.03em;
     line-height: 1;
-    min-width: 90px;
+    min-width: 88px;
     flex-shrink: 0;
   }
 
   .avm-about__stat-label {
-    font-size: 12px;
-    color: #5F7A99;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #64748B;
     line-height: 1.4;
   }
 
   /* ── 3. Mission ──────────────────────────────────────────── */
   .avm-about__mission {
-    background: #F4F8FD;
-    padding: 80px 0;
+    background: #F5F5F3;
+    padding: 100px 0;
   }
 
-  .avm-about__section-header {
-    margin-bottom: 3rem;
+  .avm-about__section-label {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2563EB;
+    margin-bottom: 1rem;
   }
 
   .avm-about__section-h2 {
-    font-size: clamp(2.4rem, 3vw, 3.4rem);
-    font-weight: 700;
-    color: #042C53;
-    letter-spacing: -0.02em;
-    line-height: 1.14;
-    margin: 0.8rem 0 0;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    color: #0A1628;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    margin: 0 0 3rem;
   }
 
   .avm-about__section-h2--white { color: #ffffff; }
@@ -125,132 +161,106 @@
   .avm-about__cards-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .avm-about__card {
     background: #ffffff;
-    border: 1px solid #E8EEF5;
-    border-top: 3px solid #378ADD;
+    border: 1px solid #E2E8F0;
+    border-top: 3px solid #2563EB;
     border-radius: 8px;
-    padding: 2rem 1.8rem;
+    padding: 1.75rem;
     transition: box-shadow 0.18s ease;
   }
 
-  .avm-about__card:hover {
-    box-shadow: 0 4px 20px rgba(4, 44, 83, 0.07);
-  }
+  .avm-about__card:hover { box-shadow: 0 4px 20px rgba(10, 22, 40, 0.07); }
 
   .avm-about__card-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #042C53;
-    margin: 0 0 0.7rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0A1628;
+    margin: 0 0 0.75rem;
     line-height: 1.3;
   }
 
   .avm-about__card-body {
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     line-height: 1.75;
-    color: #5F7A99;
+    color: #64748B;
     margin: 0;
   }
 
   /* ── 4. Certifications ──────────────────────────────────── */
-  .avm-about__certs {
-    background: #ffffff;
-    padding: 80px 0;
-  }
+  .avm-about__certs { background: #ffffff; padding: 100px 0; }
 
   .avm-about__cert-badges {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.4rem;
+    gap: 1.2rem;
     margin-bottom: 4rem;
   }
 
   .avm-about__cert-badge {
-    border: 1px solid #E8EEF5;
+    border: 1px solid #E2E8F0;
     border-radius: 8px;
-    padding: 2rem 1.4rem;
+    padding: 1.25rem 1.5rem;
     text-align: center;
-    transition: box-shadow 0.18s ease;
+    transition: box-shadow 0.18s ease, border-color 0.18s ease;
   }
 
   .avm-about__cert-badge:hover {
-    box-shadow: 0 4px 16px rgba(4, 44, 83, 0.07);
+    box-shadow: 0 4px 16px rgba(10, 22, 40, 0.07);
+    border-color: #BFDBFE;
   }
 
-  .avm-about__cert-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #E6F1FB;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    position: relative;
-  }
-
-  .avm-about__cert-icon::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #378ADD;
+  .avm-about__cert-check {
+    display: block;
+    font-size: 16px;
+    color: #2563EB;
+    margin-bottom: 0.5rem;
+    line-height: 1;
   }
 
   .avm-about__cert-name {
-    font-size: 12px;
-    font-weight: 700;
-    color: #042C53;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0A1628;
     margin: 0;
   }
 
   /* Details table */
-  .avm-about__table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .avm-about__table tr {
-    border-bottom: 1px solid #E8EEF5;
-  }
-
+  .avm-about__table { width: 100%; border-collapse: collapse; }
+  .avm-about__table tr { border-bottom: 1px solid #E2E8F0; }
   .avm-about__table tr:last-child { border-bottom: none; }
-
   .avm-about__table td {
     padding: 0.875rem 0;
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     vertical-align: top;
     line-height: 1.5;
   }
-
   .avm-about__table td:first-child {
     width: 160px;
-    color: #5F7A99;
+    color: #64748B;
     padding-right: 2rem;
     flex-shrink: 0;
   }
-
-  .avm-about__table td:last-child {
-    color: #042C53;
-    font-weight: 500;
-  }
+  .avm-about__table td:last-child { color: #0A1628; font-weight: 500; }
 
   /* ── 5. Clients ─────────────────────────────────────────── */
   .avm-about__clients {
-    background: #042C53;
-    padding: 80px 0;
+    background: #0A1628;
+    padding: 100px 0;
     text-align: center;
   }
 
   .avm-about__clients-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.7rem;
     justify-content: center;
     margin-top: 2.8rem;
   }
@@ -260,86 +270,83 @@
     padding: 6px 14px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
     transition: border-color 0.18s ease, background 0.18s ease;
   }
 
   .avm-about__pill:hover {
-    border-color: rgba(55, 138, 221, 0.5);
-    background: rgba(55, 138, 221, 0.08);
+    border-color: rgba(37, 99, 235, 0.5);
+    background: rgba(37, 99, 235, 0.08);
   }
 
   /* ── 6. CTA ─────────────────────────────────────────────── */
-  .avm-about__cta-wrap {
-    background: #F4F8FD;
+  .avm-about__cta {
+    background: #0A1628;
     padding: 80px 3rem;
   }
 
-  .avm-about__cta-block {
-    max-width: 1200px;
+  .avm-about__cta-inner {
+    max-width: 1280px;
     margin: 0 auto;
-    background: #0C447C;
-    border-radius: 8px;
-    padding: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2.4rem;
-    flex-wrap: wrap;
   }
 
-  .avm-about__cta-h3 {
-    font-size: 22px;
-    font-weight: 700;
+  .avm-about__cta-h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(30px, 3.5vw, 40px);
+    font-weight: 400;
     color: #ffffff;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin: 0 0 0.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    max-width: 520px;
   }
 
   .avm-about__cta-sub {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0;
-    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
+    max-width: 480px;
   }
+
+  .avm-about__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: #2563EB;
+    color: #ffffff;
+    padding: 13px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s ease;
+    min-height: 44px;
+  }
+
+  .avm-about__cta-btn:hover { background: #1d4ed8; color: #ffffff; }
 
   /* ── Responsive ─────────────────────────────────────────── */
-  @media screen and (max-width: 899px) {
-    .avm-about__intro-grid,
-    .avm-about__cards-3 {
-      grid-template-columns: 1fr;
-      gap: 2.4rem;
-    }
-
-    .avm-about__cert-badges {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media screen and (max-width: 1024px) {
+    .avm-about__intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .avm-about__cards-3 { grid-template-columns: 1fr; }
+    .avm-about__cert-badges { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 767px) {
     .avm-about__hero,
     .avm-about__intro,
     .avm-about__mission,
     .avm-about__certs,
     .avm-about__clients,
-    .avm-about__cta-wrap {
-      padding: 60px 1.6rem;
-    }
-
-    .avm-about__hero { padding: 60px 1.6rem; }
-    .avm-about__cta-wrap { padding: 60px 1.6rem; }
-
-    .avm-about__inner { padding: 0 1.6rem; }
-
-    .avm-about__table td:first-child {
-      width: auto;
-      display: block;
-      padding-bottom: 0;
-    }
-
-    .avm-about__table td:last-child { display: block; }
+    .avm-about__cta { padding: 64px 1.5rem; }
+    .avm-about__wrap { padding: 0 1.5rem; }
+    .avm-about__cert-badges { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 
@@ -348,7 +355,8 @@
   <!-- 1. Hero -->
   <section class="avm-about__hero">
     <div class="avm-about__hero-inner">
-      <span class="avm-label">About us</span>
+      <span class="avm-about__hero-deco" aria-hidden="true"></span>
+      <span class="avm-about__hero-label">About us</span>
       <h1 class="avm-about__hero-h1">An innovative company, made in India</h1>
       <p class="avm-about__hero-sub">Indigenous surgical products developed in German collaboration — supplied to premier institutions across India and worldwide.</p>
     </div>
@@ -356,17 +364,14 @@
 
   <!-- 2. Company Intro -->
   <section class="avm-about__intro">
-    <div class="avm-about__inner">
+    <div class="avm-about__wrap">
       <div class="avm-about__intro-grid">
-
         <div>
-          <span class="avm-accent-bar"></span>
-          <span class="avm-label">Who we are</span>
+          <span class="avm-about__intro-label">Who we are</span>
           <h2 class="avm-about__intro-h2">The leading manufacturer of advanced surgical instruments</h2>
           <p class="avm-about__intro-body">AVM Healthcare Products Pvt. Ltd. is a New Delhi–based manufacturer and supplier of surgical instruments and medical devices. The company is engaged in the design, development, innovation, production, sales, and consultancy of all kinds of surgical instruments and equipment.</p>
           <p class="avm-about__intro-body">Our range spans neurosurgery, micro surgery, cranio surgery, plastic surgery, implants, spinal surgery, cardiovascular surgery, gynaecology, ENT, orthopaedics, and more. We supply to premier institutions across India and export to overseas markets.</p>
         </div>
-
         <div class="avm-about__stats">
           <div class="avm-about__stat-row">
             <span class="avm-about__stat-num">3,400+</span>
@@ -385,92 +390,65 @@
             <span class="avm-about__stat-label">Exports to international markets</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- 3. Mission, Motive, Collaboration -->
+  <!-- 3. Mission -->
   <section class="avm-about__mission">
-    <div class="avm-about__inner">
-      <div class="avm-about__section-header">
-        <span class="avm-label">Purpose</span>
-        <h2 class="avm-about__section-h2">Mission, motive &amp; collaboration</h2>
-      </div>
+    <div class="avm-about__wrap">
+      <span class="avm-about__section-label">Purpose</span>
+      <h2 class="avm-about__section-h2">Mission, motive &amp; collaboration</h2>
       <div class="avm-about__cards-3">
-
         <div class="avm-about__card">
           <h3 class="avm-about__card-title">Our Mission</h3>
           <p class="avm-about__card-body">To provide world-class instruments for the benefit of mankind. Our motto is to continuously evolve our product range to meet the dynamic requirements of surgical users.</p>
         </div>
-
         <div class="avm-about__card">
           <h3 class="avm-about__card-title">Our Motive</h3>
           <p class="avm-about__card-body">Surgeon priority with hundred percent satisfactory installations worldwide. Offering complete solutions — from idea conceptualisation and product design to product launch, including validation with Govt. and Non-Govt. bodies under OEM arrangements.</p>
         </div>
-
         <div class="avm-about__card">
           <h3 class="avm-about__card-title">German Collaboration</h3>
           <p class="avm-about__card-body">AVM produces indigenous products made in collaboration with German engineering standards, and ANI products made in Germany — combining the best of Indian manufacturing with European precision.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- 4. Certifications -->
   <section class="avm-about__certs">
-    <div class="avm-about__inner">
-      <div class="avm-about__section-header">
-        <span class="avm-label">Certifications &amp; compliance</span>
-        <h2 class="avm-about__section-h2">Built to the highest standards</h2>
-      </div>
+    <div class="avm-about__wrap">
+      <span class="avm-about__section-label">Certifications &amp; compliance</span>
+      <h2 class="avm-about__section-h2">Built to the highest standards</h2>
 
       <div class="avm-about__cert-badges">
         <div class="avm-about__cert-badge">
-          <div class="avm-about__cert-icon" aria-hidden="true"></div>
+          <span class="avm-about__cert-check" aria-hidden="true">&#10003;</span>
           <p class="avm-about__cert-name">CE Certified</p>
         </div>
         <div class="avm-about__cert-badge">
-          <div class="avm-about__cert-icon" aria-hidden="true"></div>
+          <span class="avm-about__cert-check" aria-hidden="true">&#10003;</span>
           <p class="avm-about__cert-name">ISO Certified</p>
         </div>
         <div class="avm-about__cert-badge">
-          <div class="avm-about__cert-icon" aria-hidden="true"></div>
+          <span class="avm-about__cert-check" aria-hidden="true">&#10003;</span>
           <p class="avm-about__cert-name">FDA Compliant</p>
         </div>
         <div class="avm-about__cert-badge">
-          <div class="avm-about__cert-icon" aria-hidden="true"></div>
+          <span class="avm-about__cert-check" aria-hidden="true">&#10003;</span>
           <p class="avm-about__cert-name">NSIC Registered</p>
         </div>
       </div>
 
       <table class="avm-about__table">
         <tbody>
-          <tr>
-            <td>Registered Office</td>
-            <td>17-19 A Block Chhatarpur Extension, Rajpur Road, New Delhi</td>
-          </tr>
-          <tr>
-            <td>Manufacturing Unit</td>
-            <td>HR-11A, Street No. 10, New Rohtak Road Industrial Area, New Delhi</td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td><a href="mailto:info@avmhealthcare.com" style="color:#185FA5; text-decoration:none;">info@avmhealthcare.com</a></td>
-          </tr>
-          <tr>
-            <td>GST</td>
-            <td>07AABCA1500D1ZM</td>
-          </tr>
-          <tr>
-            <td>IEC</td>
-            <td>0597024685</td>
-          </tr>
-          <tr>
-            <td>Trade Mark No.</td>
-            <td>4621659</td>
-          </tr>
+          <tr><td>Registered Office</td><td>17-19 A Block Chhatarpur Extension, Rajpur Road, New Delhi</td></tr>
+          <tr><td>Manufacturing Unit</td><td>HR-11A, Street No. 10, New Rohtak Road Industrial Area, New Delhi</td></tr>
+          <tr><td>Email</td><td><a href="mailto:info@avmhealthcare.com" style="color:#2563EB;text-decoration:none;">info@avmhealthcare.com</a></td></tr>
+          <tr><td>GST</td><td>07AABCA1500D1ZM</td></tr>
+          <tr><td>IEC</td><td>0597024685</td></tr>
+          <tr><td>Trade Mark No.</td><td>4621659</td></tr>
         </tbody>
       </table>
     </div>
@@ -478,8 +456,8 @@
 
   <!-- 5. Clients -->
   <section class="avm-about__clients">
-    <div class="avm-about__inner">
-      <span class="avm-label avm-label--light">Our clients</span>
+    <div class="avm-about__wrap">
+      <span class="avm-about__section-label">Our clients</span>
       <h2 class="avm-about__section-h2 avm-about__section-h2--white">Trusted by India's leading hospitals</h2>
       <div class="avm-about__clients-pills">
         <span class="avm-about__pill">AIIMS Delhi</span>
@@ -501,15 +479,11 @@
   </section>
 
   <!-- 6. CTA -->
-  <section>
-    <div class="avm-about__cta-wrap">
-      <div class="avm-about__cta-block">
-        <div>
-          <h3 class="avm-about__cta-h3">Get our detailed product catalogue</h3>
-          <p class="avm-about__cta-sub">3,400+ instruments across 6 specialties — delivered to your inbox within one business day.</p>
-        </div>
-        <a href="/pages/request-catalogue" class="avm-btn avm-btn--bright" style="flex-shrink:0;">Request Full Catalogue</a>
-      </div>
+  <section class="avm-about__cta">
+    <div class="avm-about__cta-inner">
+      <h2 class="avm-about__cta-h2">Get our detailed product catalogue</h2>
+      <p class="avm-about__cta-sub">3,400+ instruments across 6 specialties — delivered to your inbox within one business day.</p>
+      <a href="/pages/request-catalogue" class="avm-about__cta-btn">Request full catalogue &rarr;</a>
     </div>
   </section>
 

@@ -1,7 +1,7 @@
 <style>
   .avm-video {
     background: #F5F5F3;
-    padding: var(--section-pad, 120px) 0;
+    padding: 120px 0;
   }
 
   .avm-video__inner {
@@ -27,7 +27,7 @@
 
   .avm-video__h2 {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(32px, 3.5vw, 44px);
+    font-size: clamp(30px, 3.2vw, 44px);
     font-weight: 400;
     color: #0A1628;
     letter-spacing: -0.03em;
@@ -40,18 +40,24 @@
     font-size: 16px;
     color: #64748B;
     line-height: 1.85;
-    margin: 0 0 2rem;
+    margin: 0;
   }
 
-  .avm-video__pullquote {
+  .avm-video__quote {
     border-left: 3px solid #2563EB;
-    padding-left: 1.25rem;
-    margin: 0;
+    padding: 1rem 1.25rem;
+    background: #F0F7FF;
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+  }
+
+  .avm-video__quote p {
     font-family: 'DM Serif Display', Georgia, serif;
     font-style: italic;
-    font-size: 20px;
+    font-size: 19px;
     color: #0A1628;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin: 0;
   }
 
   .avm-video__embed-wrap {
@@ -60,7 +66,7 @@
     border-radius: 12px;
     overflow: hidden;
     aspect-ratio: 16 / 9;
-    box-shadow: 0 20px 60px rgba(10,22,40,0.18);
+    box-shadow: 0 20px 60px rgba(10, 22, 40, 0.16);
   }
 
   .avm-video__embed-wrap iframe {
@@ -77,12 +83,8 @@
   }
 
   @media screen and (max-width: 767px) {
-    .avm-video__inner {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
     .avm-video { padding: 64px 0; }
-    .avm-video__inner { padding: 0 1.5rem; }
+    .avm-video__inner { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
   }
 </style>
 
@@ -92,9 +94,9 @@
       <span class="avm-video__label">Who we are</span>
       <h2 class="avm-video__h2">Supplying surgical excellence since 1996</h2>
       <p class="avm-video__body">AVM Healthcare Products Pvt. Ltd. is a New Delhi–based manufacturer and supplier of advanced quality surgical instruments and medical devices. We design, develop, and supply instruments across neurosurgery, general surgery, cardiovascular, gynaecology, plastic surgery, and more — serving premier institutions including AIIMS, Medanta, Fortis, Apollo, and KEM Hospital.</p>
-      <blockquote class="avm-video__pullquote">
-        Our motto is to provide world-class instruments for the benefit of mankind.
-      </blockquote>
+      <div class="avm-video__quote">
+        <p>Our motto is to provide world-class instruments for the benefit of mankind.</p>
+      </div>
     </div>
     <div>
       <div class="avm-video__embed-wrap">

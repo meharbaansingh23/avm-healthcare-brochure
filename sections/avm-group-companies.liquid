@@ -1,17 +1,13 @@
 <style>
   .avm-group {
     background: #FAFAFA;
-    padding: var(--section-pad, 120px) 0;
+    padding: 120px 0;
   }
 
   .avm-group__inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 3rem;
-  }
-
-  .avm-group__top {
-    margin-bottom: 4rem;
   }
 
   .avm-group__label {
@@ -27,53 +23,47 @@
 
   .avm-group__h2 {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(32px, 3.5vw, 44px);
+    font-size: clamp(30px, 3.2vw, 44px);
     font-weight: 400;
     color: #0A1628;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    margin: 0;
+    margin: 0 0 4rem;
   }
 
   .avm-group__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .avm-group__card {
     border-top: 2px solid #E2E8F0;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     transition: border-color 0.2s ease;
+    cursor: default;
   }
 
-  .avm-group__card:hover {
-    border-color: #2563EB;
-  }
+  .avm-group__card:hover { border-color: #2563EB; }
 
   .avm-group__logo {
     width: 120px;
-    height: 50px;
-    background: #E2E8F0;
+    height: 48px;
+    background: #F1F5F9;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    transition: background 0.2s ease;
-  }
-
-  .avm-group__card:hover .avm-group__logo {
-    background: #DBEAFE;
   }
 
   .avm-group__logo-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #94A3B8;
+    color: #CBD5E1;
   }
 
   .avm-group__name {
@@ -93,7 +83,7 @@
   }
 
   @media screen and (max-width: 1024px) {
-    .avm-group__cards { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .avm-group__cards { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media screen and (max-width: 767px) {
@@ -105,12 +95,8 @@
 
 <section class="avm-group">
   <div class="avm-group__inner">
-
-    <div class="avm-group__top">
-      <span class="avm-group__label">Our group</span>
-      <h2 class="avm-group__h2">Part of a larger family</h2>
-    </div>
-
+    <span class="avm-group__label">Our group</span>
+    <h2 class="avm-group__h2">Part of a larger family</h2>
     <div class="avm-group__cards">
 
       <div class="avm-group__card">

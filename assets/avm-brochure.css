@@ -1,123 +1,63 @@
 /* AVM Healthcare — Design System */
 
-/* ── Tokens ─────────────────────────────────────────────── */
+/* ── Tokens ──────────────────────────────────────────────── */
 :root {
-  --avm-ink:       #0A1628;
-  --avm-blue:      #2563EB;
-  --avm-muted:     #64748B;
-  --avm-subtle:    #94A3B8;
-  --avm-border:    #E2E8F0;
-  --avm-surface:   #F5F5F3;
-  --avm-bg:        #FAFAFA;
-  --avm-white:     #FFFFFF;
+  /* Core palette */
+  --avm-ink:     #0A1628;
+  --avm-navy:    #0A1628;
+  --avm-blue:    #2563EB;
+  --avm-muted:   #64748B;
+  --avm-subtle:  #94A3B8;
+  --avm-border:  #E2E8F0;
+  --avm-surface: #F5F5F3;
+  --avm-bg:      #FAFAFA;
+  --avm-white:   #FFFFFF;
 
   /* Named aliases */
-  --avm-navy:      #0A1628;
-  --avm-text:      #64748B;
-  --avm-bg-alt:    #F5F5F3;
+  --avm-text:    #64748B;
+  --avm-bg-alt:  #F5F5F3;
 
+  /* Type */
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
 
-  --container: 1280px;
-  --section-pad: 120px;
+  /* Layout */
+  --container:    1280px;
+  --section-pad:  120px;
 }
 
 /* ── Base ────────────────────────────────────────────────── */
-body,
-body * {
+body, body * {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Container ───────────────────────────────────────────── */
-.avm-wrap {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 3rem;
+/* ── Dawn header overrides ───────────────────────────────── */
+/* Hide logo, search, account, cart — our nav has everything */
+.header__heading,
+.header__heading-link,
+.header-wrapper .header__icons,
+.section-header header-drawer {
+  display: none !important;
 }
 
-/* ── Labels ──────────────────────────────────────────────── */
-.avm-label {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--avm-blue);
+.header__inline-menu {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.avm-label--muted {
-  color: var(--avm-subtle);
+.header {
+  padding: 0 !important;
+  display: block !important;
 }
 
-/* ── Display headings ────────────────────────────────────── */
-.avm-display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--avm-ink);
-}
-
-/* ── Buttons ─────────────────────────────────────────────── */
-.avm-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 6px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
-}
-
-.avm-btn--primary {
-  background: var(--avm-ink);
-  color: var(--avm-white);
-  padding: 14px 28px;
-}
-
-.avm-btn--primary:hover {
-  background: #111f38;
-  color: var(--avm-white);
-}
-
-.avm-btn--ghost {
-  background: transparent;
-  color: var(--avm-muted);
-  padding: 14px 20px;
-}
-
-.avm-btn--ghost:hover {
-  color: var(--avm-ink);
-}
-
-.avm-btn--blue {
-  background: var(--avm-blue);
-  color: var(--avm-white);
-  padding: 14px 32px;
-  font-size: 15px;
-}
-
-.avm-btn--blue:hover {
-  background: #1d4ed8;
-  color: var(--avm-white);
-}
-
-/* ── Accent bar ──────────────────────────────────────────── */
-.avm-accent-bar {
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--avm-blue);
-  border-radius: 2px;
-  margin-bottom: 1.2rem;
+.header-wrapper {
+  background: var(--avm-white) !important;
+  border-bottom: 1px solid var(--avm-border) !important;
+  box-shadow: none !important;
 }
 
 /* ── Navbar ──────────────────────────────────────────────── */
@@ -128,15 +68,17 @@ body * {
   height: 68px;
   padding: 0 3rem;
   background: var(--avm-white);
-  border-bottom: 1px solid var(--avm-border);
-  max-width: none;
+  border-bottom: none;
+  width: 100%;
   box-sizing: border-box;
+  max-width: none;
 }
 
 .avm-nav__logo {
   text-decoration: none;
   flex-shrink: 0;
-  line-height: 1.2;
+  line-height: 1.25;
+  cursor: pointer;
 }
 
 .avm-nav__logo-name {
@@ -153,7 +95,7 @@ body * {
   font-family: var(--font-body);
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--avm-blue);
   margin-top: 1px;
@@ -174,6 +116,7 @@ body * {
   color: var(--avm-muted);
   text-decoration: none;
   transition: color 0.15s ease;
+  cursor: pointer;
 }
 
 .avm-nav__link:hover,
@@ -182,7 +125,8 @@ body * {
 }
 
 .avm-nav__cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: var(--avm-ink);
   color: var(--avm-white) !important;
   font-family: var(--font-body);
@@ -193,11 +137,50 @@ body * {
   text-decoration: none !important;
   transition: background 0.15s ease;
   white-space: nowrap;
+  cursor: pointer;
+  min-height: 44px;
 }
 
-.avm-nav__cta:hover {
-  background: #111f38 !important;
+.avm-nav__cta:hover { background: #111f38 !important; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.avm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+  padding: 12px 24px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
+
+.avm-btn--primary {
+  background: var(--avm-ink);
+  color: var(--avm-white);
+  padding: 14px 28px;
+}
+.avm-btn--primary:hover { background: #111f38; color: var(--avm-white); }
+
+.avm-btn--blue {
+  background: var(--avm-blue);
+  color: var(--avm-white);
+  padding: 14px 32px;
+  font-size: 15px;
+}
+.avm-btn--blue:hover { background: #1d4ed8; color: var(--avm-white); }
+
+.avm-btn--ghost {
+  background: transparent;
+  color: var(--avm-muted);
+  padding: 14px 20px;
+}
+.avm-btn--ghost:hover { color: var(--avm-ink); }
 
 /* ── Footer ──────────────────────────────────────────────── */
 .avm-footer {
@@ -207,20 +190,21 @@ body * {
 }
 
 .avm-footer__inner {
-  max-width: var(--container);
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 2rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  box-sizing: border-box;
 }
 
 .avm-footer__copy {
   font-family: var(--font-body);
   font-size: 12px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.01em;
 }
 
@@ -235,16 +219,15 @@ body * {
 .avm-footer__link {
   font-family: var(--font-body);
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   transition: color 0.15s ease;
+  cursor: pointer;
 }
 
-.avm-footer__link:hover {
-  color: rgba(255,255,255,0.75);
-}
+.avm-footer__link:hover { color: rgba(255, 255, 255, 0.75); }
 
-/* ── Hero load animation ─────────────────────────────────── */
+/* ── Entrance animation ──────────────────────────────────── */
 @keyframes avm-fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -260,15 +243,20 @@ body * {
 .avm-animate--d4 { animation-delay: 0.35s; }
 .avm-animate--d5 { animation-delay: 0.45s; }
 
+@media (prefers-reduced-motion: reduce) {
+  .avm-animate { animation: none !important; }
+}
+
 /* ── Responsive ─────────────────────────────────────────── */
 @media screen and (max-width: 1024px) {
   :root { --section-pad: 80px; }
-  .avm-wrap { padding: 0 2rem; }
-  .avm-nav  { padding: 0 2rem; }
+  .avm-nav { padding: 0 2rem; }
+  .avm-footer__inner { padding: 2rem 2rem; }
 }
 
 @media screen and (max-width: 767px) {
   :root { --section-pad: 64px; }
-  .avm-wrap { padding: 0 1.5rem; }
-  .avm-nav  { padding: 0 1.5rem; }
+  .avm-nav { padding: 0 1.5rem; }
+  .avm-nav__links { gap: 1.2rem; }
+  .avm-footer__inner { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
 }
