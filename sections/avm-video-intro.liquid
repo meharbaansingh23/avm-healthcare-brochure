@@ -1,0 +1,98 @@
+<style>
+  .avm-video {
+    background: #F5F5F5;
+    padding: 7rem 0;
+  }
+
+  .avm-video__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5.6rem;
+    align-items: center;
+  }
+
+  .avm-video__text {}
+
+  .avm-video__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 4vw, 4.4rem);
+    font-weight: 700;
+    color: #0A1F44;
+    margin: 0 0 1.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .avm-video__body {
+    font-family: var(--font-body-family);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    max-width: 480px;
+  }
+
+  .avm-video__embed-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(10,31,68,0.14);
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+
+  .avm-video__embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  @media screen and (max-width: 899px) {
+    .avm-video__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .avm-video {
+      padding: 4rem 0;
+    }
+  }
+</style>
+
+<section class="avm-video">
+  <div class="avm-video__inner">
+    <div class="avm-video__text">
+      <h2 class="avm-video__heading">Who We Are</h2>
+      <p class="avm-video__body">AVM Healthcare Products has spent decades supplying high-quality surgical instruments to healthcare institutions across India and beyond.</p>
+    </div>
+    <div class="avm-video__embed">
+      <div class="avm-video__embed-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/_QNRNKJiNuA?si=wH5S5vWoH1WOQ6iS"
+          title="Who We Are — AVM Healthcare Products"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AVM Video Intro",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AVM Video Intro"
+    }
+  ]
+}
+{% endschema %}

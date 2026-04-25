@@ -1,0 +1,77 @@
+<style>
+  .avm-cta {
+    background: #0A1F44;
+    padding: 7rem 0;
+    text-align: center;
+  }
+
+  .avm-cta__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .avm-cta__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .avm-cta__body {
+    font-family: var(--font-body-family);
+    font-size: 1.7rem;
+    line-height: 1.65;
+    color: #c8cfd9;
+    margin: 0 0 3.2rem;
+  }
+
+  .avm-cta__btn {
+    display: inline-block;
+    padding: 1.25rem 3.2rem;
+    background: #B87D2A;
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #B87D2A;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .avm-cta__btn:hover {
+    background: #9e6b22;
+    border-color: #9e6b22;
+  }
+
+  @media screen and (max-width: 749px) {
+    .avm-cta {
+      padding: 4rem 0;
+    }
+  }
+</style>
+
+<section class="avm-cta">
+  <div class="avm-cta__inner">
+    <h2 class="avm-cta__heading">Get our detailed product catalogue</h2>
+    <p class="avm-cta__body">Over 3,400 surgical instruments across 6 specialties — request the full catalogue and our team will send it to you within one business day.</p>
+    <a href="/pages/request-catalogue" class="avm-cta__btn">Request Full Catalogue</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AVM Catalogue CTA",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AVM Catalogue CTA"
+    }
+  ]
+}
+{% endschema %}

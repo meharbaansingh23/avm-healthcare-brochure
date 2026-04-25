@@ -1,0 +1,115 @@
+<style>
+  .avm-values {
+    background: #ffffff;
+    padding: 7rem 0;
+  }
+
+  .avm-values__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .avm-values__label {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #B87D2A;
+    margin: 0 0 1.2rem;
+    display: block;
+  }
+
+  .avm-values__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-weight: 700;
+    color: #0A1F44;
+    margin: 0 0 4rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .avm-values__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  .avm-values__card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-left: 4px solid #0A1F44;
+    border-radius: 0 8px 8px 0;
+    padding: 2.8rem 2.4rem;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .avm-values__card:hover {
+    box-shadow: 0 6px 28px rgba(10,31,68,0.10);
+  }
+
+  .avm-values__card-title {
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0A1F44;
+    margin: 0 0 0.8rem;
+  }
+
+  .avm-values__card-body {
+    font-family: var(--font-body-family);
+    font-size: 1.55rem;
+    line-height: 1.65;
+    color: #555;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .avm-values__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .avm-values {
+      padding: 4rem 0;
+    }
+  }
+</style>
+
+<section class="avm-values">
+  <div class="avm-values__inner">
+    <span class="avm-values__label">Our Values</span>
+    <h2 class="avm-values__heading">What drives us</h2>
+    <div class="avm-values__grid">
+      <div class="avm-values__card">
+        <h3 class="avm-values__card-title">Quality First</h3>
+        <p class="avm-values__card-body">Every product is rigorously checked against international standards before reaching your hands.</p>
+      </div>
+      <div class="avm-values__card">
+        <h3 class="avm-values__card-title">Patient Centred</h3>
+        <p class="avm-values__card-body">Instruments designed and selected with care outcomes at the heart of every decision.</p>
+      </div>
+      <div class="avm-values__card">
+        <h3 class="avm-values__card-title">Trusted Partnerships</h3>
+        <p class="avm-values__card-body">Long-term relationships with hospitals and institutions built on reliability and transparency.</p>
+      </div>
+      <div class="avm-values__card">
+        <h3 class="avm-values__card-title">Innovation</h3>
+        <p class="avm-values__card-body">Constantly expanding our catalogue with new solutions that meet evolving surgical demands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AVM Values",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AVM Values"
+    }
+  ]
+}
+{% endschema %}

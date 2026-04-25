@@ -10,6 +10,21 @@
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
 
+  /* AVM footer — navy background, gold accent links */
+  .footer.color-scheme-3 .footer-block__heading,
+  .footer.color-scheme-3 .footer-block__details-content a,
+  .footer.color-scheme-3 .list-menu__item--link,
+  .footer.color-scheme-3 .link--text,
+  .footer.color-scheme-3 .copyright__content a {
+    color: #B87D2A !important;
+  }
+
+  .footer.color-scheme-3 .footer-block__details-content a:hover,
+  .footer.color-scheme-3 .list-menu__item--link:hover,
+  .footer.color-scheme-3 .link--text:hover {
+    color: #d4942f !important;
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
